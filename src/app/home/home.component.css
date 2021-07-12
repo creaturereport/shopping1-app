@@ -1,18 +1,37 @@
 .logoHolder {
     width: 100%;
+    top: 0;
     height: 400px;
+    flex-direction: row;
     text-align: center;
+    z-index: 999;
     /* bgc just to see the div params */
-    /* background-color: lightgray; */
+    background: linear-gradient(to top, transparent 0%, rgb(0,0,0,0.3) 50%); 
+}
+
+.right{
+    display: flex;
+    align-items: center;
+}
+
+.shoppingCartLogo{
+    margin: 0px 15px;
+    cursor: pointer;
+}
+
+.bi-cart{
+    color: red;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
     
 }
 
 .productContainer {
     display: flex;
     justify-content: space-around;
+    position: relative;
     padding: 10px;
-  
-
 }
 
 .cardContent{
