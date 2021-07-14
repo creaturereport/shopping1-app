@@ -4,7 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ShirtsComponent } from './shirts/shirts.component';
+import { ShirtsComponent } from './tops/tops.component';
+import { BottomsComponent } from './bottoms/bottoms.component';
+import { HatsComponent } from './hats/hats.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ShoesComponent } from './shoes/shoes.component';
+import { AccessoriesComponent } from './accessories/accessories.component';
 
 
 @NgModule({
@@ -12,6 +17,11 @@ import { ShirtsComponent } from './shirts/shirts.component';
     AppComponent,
     HomeComponent,
     ShirtsComponent,
+    BottomsComponent,
+    HatsComponent,
+    PagenotfoundComponent,
+    ShoesComponent,
+    AccessoriesComponent,
    
   ],
   imports: [

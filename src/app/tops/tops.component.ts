@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-shirts',
-  templateUrl: './shirts.component.html',
-  styleUrls: ['./shirts.component.css']
+  selector: 'tops',
+  templateUrl: './tops.component.html',
+  styleUrls: ['./tops.component.css']
 })
-export class ShirtsComponent implements OnInit {
+export class TopsComponent implements OnInit {
 
   constructor() { 
     console.log(this.styleShirts)
