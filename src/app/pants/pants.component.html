@@ -1,1 +1,18 @@
-<p>pants works!</p>
+<div class="pantsContainer">
+    <div *ngFor="let pant of pantsList">
+        <div class="cardStyle">
+            <div class="card" style="width: 18rem;">
+                <img src={{pant.image_url}} 
+                    class="card-img-top"
+                    width="290px"
+                    height="300px" 
+                    alt="pants">
+                <div class="card-body">
+                  <h5 class="card-title">{{ pant.name }}</h5>
+                  <p class="card-text">${{ pant.price }}</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
