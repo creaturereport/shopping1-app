@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class WatchesComponent implements OnInit {
 
   constructor() {
-    console.log(this.watchesList)
+    console.log(this.watchList)
    }
 
   ngOnInit(): void {
   }
 
-  watchesList: any = [
+  watchList: any = [
     {
       id: 9, 
       name: "Watch",

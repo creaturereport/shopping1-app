@@ -1,1 +1,18 @@
-<p>watches works!</p>
+<div class="watchesContainer">
+    <div *ngFor="let watch of watchList">
+        <div class="cardStyle">
+            <div class="card" style="width: 18rem;">
+                <img src={{watch.image_url}} 
+                    class="card-img-top"
+                    width="290px"
+                    height="300px" 
+                    alt="watches">
+                <div class="card-body">
+                  <h5 class="card-title">{{ watch.name }}</h5>
+                  <p class="card-text">${{ watch.price }}</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
