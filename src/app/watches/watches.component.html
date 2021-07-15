@@ -1,18 +1,18 @@
 <app-nav></app-nav>
-<!-- Display options for shirts -->
-<div class="shirtsContainer"> 
-    <div *ngFor="let shirt of styleShirts">
+<!-- Display options for watches -->
+<div class="watchesContainer"> 
+    <div *ngFor="let watch of watchStyles">
         
         <div class="cardStyle">
             <div class="card" style="width: 18rem;">
-                <img src={{shirt.image_url}} 
+                <img src={{watch.image_url}} 
                     class="card-img-top"
                     width="290px"
                     height="300px" 
-                    alt="shirts">
+                    alt="hats">
                 <div class="card-body">
-                  <h5 class="card-title">{{ shirt.name }}</h5>
-                  <p class="card-text">${{ shirt.price }}</p>
+                  <h5 class="card-title">{{ watch.name }}</h5>
+                  <p class="card-text">${{ watch.price }}</p>
                   <a href="#" class="btn btn-primary">Add to Cart</a>
                 </div>
               </div>
