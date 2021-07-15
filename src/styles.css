@@ -2,4 +2,8 @@
 
 
 
-@Import"~../node_modules/bootstrap/dist/css/bootstrap.min.css"
+@Import"~../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+body {
+    padding-top: 1px;
+}
