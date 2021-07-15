@@ -22,7 +22,7 @@ export class ShirtsComponent implements OnInit {
       image_url: "https://cdn.shopify.com/s/files/1/0264/0225/8995/products/USASMZ2006_A.jpg?v=1591293163"
     }, 
     {
-       id: 2, 
+       id: 2,
       name: "Hoodie",
       price: "50.00",
       image_url: "https://i1.adis.ws/i/easton/M10HOODIE_ATHLETICHEATHER_01/M10TECHFLEECEHOODIE-ATHLETICHEATHER?$large$"
