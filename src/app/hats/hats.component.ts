@@ -15,7 +15,7 @@ export class HatsComponent implements OnInit {
   hatsList: any = [
      
       {
-         id: 6, 
+        id: 6, 
         name: "Hat",
         price: "25.00",
         image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCJif0dYUsQ6JLotQ8PsHD8kdcTA5uVmYp-Q&usqp=CAU"
