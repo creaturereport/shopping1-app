@@ -1,3 +1,29 @@
 
 <!-- Home Component being called in the root level -->
-<app-home> </app-home>
+<nav>
+    <ul>
+
+    <li>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    </li>
+    <li>
+    <a routerLink="/shirts">Shirts</a>
+    </li>
+    <li>
+    <a routerLink="/pants">Pants</a>
+    </li>
+    <li>
+    <a routerLink="/shoes">Shoes</a>
+    </li>
+    <li>
+    <a routerLink="/hats">Hats</a>
+    </li>
+    <li>
+    <a routerLink="/accessories">Accessories</a>
+    </li>
+
+    
+    </ul>
+</nav>
+
+<router-outlet></router-outlet>
