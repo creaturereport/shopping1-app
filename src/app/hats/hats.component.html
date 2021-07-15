@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="hatsContainer">
     <div *ngFor = "let hat of hatsList">
         <div class="cardStyle">
@@ -8,11 +9,11 @@
                     height="300px" 
                     alt="hats">
                 <div class="card-body">
-                  <h5 class="card-title">{{ hat.name }}</h5>
-                  <p class="card-text">${{ hat.price }}</p>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                <h5 class="card-title">{{ hat.name }}</h5>
+                <p class="card-text">${{ hat.price }}</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
 </div>

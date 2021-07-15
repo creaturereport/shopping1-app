@@ -1,0 +1,13 @@
+#navHeader{
+    display: flex;
+    padding: 10px;
+}
+
+.navItems{
+    display: flex;
+    justify-content: space-around;
+}
+
+#navImg:hover{
+   cursor: pointer 
+}
