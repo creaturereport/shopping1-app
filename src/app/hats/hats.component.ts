@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HatsComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log(this.hatsList)
+   }
 
   ngOnInit(): void {
   }
