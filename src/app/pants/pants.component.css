@@ -12,3 +12,8 @@
   align-items: center;  
   
 }
+
+.btn:hover{
+  background-color: white;
+  color: blue;
+}
