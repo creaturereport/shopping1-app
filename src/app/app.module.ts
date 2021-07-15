@@ -7,6 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { TopsComponent } from './tops/tops.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
+import { ProductsComponent } from './products/products.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { OrderSuccessComponent } from './order-success/order-success.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -18,6 +24,12 @@ import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
     PageNotFoundComponent,
    
     BsNavbarComponent,
+         ProductsComponent,
+         ShoppingCartComponent,
+         CheckOutComponent,
+         OrderSuccessComponent,
+         MyOrdersComponent,
+         LoginComponent,
    
   ],
   imports: [
