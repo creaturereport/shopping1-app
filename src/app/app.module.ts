@@ -10,6 +10,7 @@ import { HatsComponent } from './hats/hats.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ShoesComponent } from './shoes/shoes.component';
 import { AccessoriesComponent } from './accessories/accessories.component';
+import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { AccessoriesComponent } from './accessories/accessories.component';
     PageNotFoundComponent,
     ShoesComponent,
     AccessoriesComponent,
+    BsNavbarComponent,
    
   ],
   imports: [
