@@ -8,6 +8,7 @@ import { ShirtsComponent } from './shirts/shirts.component';
 import { HatsComponent } from './hats/hats.component';
 import { ShoesComponent } from './shoes/shoes.component';
 import { PantsComponent } from './pants/pants.component';
+import { WatchesComponent } from './watches/watches.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PantsComponent } from './pants/pants.component';
     ShirtsComponent,
     HatsComponent,
     ShoesComponent,
-    PantsComponent
+    PantsComponent,
+    WatchesComponent
   ],
   imports: [
     BrowserModule,
