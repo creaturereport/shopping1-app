@@ -1,4 +1,71 @@
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="'/home'">DW Shopping Outlet</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" [routerLink]="'/home'">Home</a>
+        <a class="nav-item nav-link" [routerLink]="'/shirts'">Shirts</a>
+        <a class="nav-item nav-link" [routerLink]="'/hats'">Hats</a>
+        <a class="nav-item nav-link" [routerLink]="'/shoes'">Shoes</a>
+        <a class="nav-item nav-link" [routerLink]="'/pants'">Pants</a>
+        <a class="nav-item nav-link" [routerLink]="'/accessories'">Accessories</a>
+      </div>
+    </div>
+    <nav class="navbar navbar-light bg-light">
+      <form class="form-inline">
+        <label for="item">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="item" class="searchAlign">
+        </label>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search </button>
+      </form>
+    </nav>
+  </nav>
+  <div class="card bg-dark text-white">
+    <img class="card-img, bannerImg " src="https://assets.dmagstatic.com/wp-content/uploads/2017/01/Style_Mens_hero-1.jpg" alt="Card image">
+    <div class="card-img-overlay">
+        <div class="sign">
+     <span class="fast-flicker">DW</span> Shopping <span class="flicker"> Out</span>let
+    </div>
+    </div>
+  </div>
+
+
+
 
 <!-- Render our routes here -->
 <router-outlet> </router-outlet>
+
+
+<div class="footer-dark">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Locations</h3>
+                    <ul>
+                        <li><a href="#">Sacremto, CA</a></li>
+                        <li><a href="#">Manhattan, New York</a></li>
+                        <li><a href="#">Altanta, GA</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Company</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>DW Shopping Outlet</h3>
+                    <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                </div>
+                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+            </div>
+            <p class="copyright">DW Shopping Outlet © 2021</p>
+        </div>
+    </footer>
+</div>

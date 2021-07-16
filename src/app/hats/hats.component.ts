@@ -32,8 +32,8 @@ export class HatsComponent implements OnInit {
     }, 
     {
        id: 4, 
-      name: "Dior x Jordan Wings Bucket Hat",
-      price: "1300",
+      name: "Dior x Jordan Wings Hat",
+      price: "1300.00",
       image_url: "https://images.stockx.com/products/streetwear/Dior-x-Jordan-Wings-Bucket-Hat-Navy.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&dpr=2&trim=color&updated_at=1603481985"
     }
   ]

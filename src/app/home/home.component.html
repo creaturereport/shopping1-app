@@ -1,12 +1,28 @@
-<div class="logoHolder">
-    <img
-        src="../../assets/4u2nv.png" 
-        width="42%"
-        height="300px"
-        alt="logo"/>
-
-      
-</div>
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">DW Shopping Outlet</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home</a>
+      <a class="nav-item nav-link" [routerLink]="'/shirts'">Shirts</a>
+      <a class="nav-item nav-link" [routerLink]="'/hats'">Hats</a>
+      <a class="nav-item nav-link" [routerLink]="'/shoes'">Shoes</a>
+      <a class="nav-item nav-link" [routerLink]="'/pants'">Pants</a>
+      <a class="nav-item nav-link" [routerLink]="'/accessories'">Accessories</a>
+    </div>
+  </div>
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <label for="item">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="item" class="searchAlign">
+      </label>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search </button>
+    </form>
+  </nav>
+</nav>
+ -->
 
 <div class="productContainer">
 
@@ -14,7 +30,7 @@
     
     <div class="cardContent"> 
     <div class="card" style="width: 18rem;">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhjDic1LN3R1v9gYvbg_PB0bH4pidbAoSQlQ&usqp=CAU" 
+        <img src="https://media.istockphoto.com/photos/row-of-colourful-apparel-on-hangers-of-retail-shop-picture-id576933978?k=6&m=576933978&s=612x612&w=0&h=lMTe-V2rQAW0zyQuoJ9zGwGZeIejyUsN6dqPBk5hZF4=" 
         class="card-img-top" 
         width="290px"
         height="300px"
@@ -29,7 +45,7 @@
 
     <div class="cardContent"> 
         <div class="card" style="width: 18rem;">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTxfFwEKGCmlWGwc2JlF0Yh0bGhgSeG7dGjQ&usqp=CAU" 
+            <img src="https://media.istockphoto.com/photos/colourful-hats-picture-id1249395815?k=6&m=1249395815&s=612x612&w=0&h=E32WfU5jQ9IiiRU1ILS5dKoM1uNN8d6v7glDQ6tQZ2I=" 
             class="card-img-top" 
             width="290px"
             height="300px"
@@ -44,7 +60,7 @@
     
     <div class="cardContent">
         <div class="card" style="width: 18rem;">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQZXf819Vg-c28DmDWyaHWJtRcgvNFfCC6eA&usqp=CAU" 
+            <img src="https://content3.jdmagicbox.com/comp/vapi/e6/9999px260.x260.140704153923.z1e6/catalogue/nike-store-chala-vapi-sportswear-retailers-nike-7et1s.jpg" 
             class="card-img-top" 
             width="290px"
             height="300px"
@@ -60,7 +76,7 @@
     <div class="cardContent">
 
         <div class="card" style="width: 18rem;">
-            <img src="https://www.millet-mountain.com/media/catalog/product/cache/6/image/658x/9df78eab33525d08d6e5fb8d27136e95/m/i/miv7448rg-0247-all-outdoor-ii-rg-pant.jpg" 
+            <img src="https://cms.qz.com/wp-content/uploads/2018/06/retail_jeans.jpg?quality=75&strip=all&w=410&h=282" 
             class="card-img-top" 
             width="290px"
             height="300px"
@@ -68,7 +84,7 @@
             <div class="card-body">
               <h5 class="card-title">Pants</h5>
               <p class="card-text">Skinny, casual, daily, you name it.</p>
-              <a href="#" class="btn btn-primary">View All</a>
+              <a [routerLink]="'/pants'" class="btn btn-primary">View All</a>
             </div>
         </div>
     </div>
@@ -76,15 +92,15 @@
     <div class="cardContent">
 
         <div class="card" style="width: 18rem;">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_EIHk9I1TsBb34avm4KEEHbbz1GSgL9uaJA&usqp=CAU" 
+            <img src="https://retaildesignblog.net/wp-content/uploads/2012/05/s-Oliver-store-by-dfrost-Frankfurt-02.jpg" 
             class="card-img-top" 
             width="290px"
             height="300px"
             alt="accessory">
             <div class="card-body">
-              <h5 class="card-title">Watches</h5>
-              <p class="card-text">Rose gold, black, men, women.</p>
-              <a href="#" class="btn btn-primary">View All</a>
+              <h5 class="card-title">Accessories</h5>
+              <p class="card-text">Watches, Braclets, Necklaces </p>
+              <a [routerLink]="'/accessories'" class="btn btn-primary">View All</a>
             </div>
           </div>
     </div>

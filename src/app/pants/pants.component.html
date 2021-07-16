@@ -1,17 +1,16 @@
-<!-- Display options for hats -->
-<div class="hatsContainer"> 
-    <div *ngFor="let hat of styleHats">
+<div class="pantsContainer"> 
+    <div *ngFor="let pant of stylePants">
         
         <div class="cardStyle">
             <div class="card" style="width: 18rem;">
-                <img src={{hat.image_url}} 
+                <img src={{pant.image_url}} 
                     class="card-img-top"
                     width="290px"
                     height="300px" 
-                    alt="shirts">
+                    alt="pants">
                 <div class="card-body">
-                  <h5 class="card-title">{{ hat.name }}</h5>
-                  <p class="card-text">${{ hat.price }}</p>
+                  <h5 class="card-title">{{ pant.name }}</h5>
+                  <p class="card-text">${{ pant.price }}</p>
                   <a href="#" class="btn btn-primary">Add to Cart</a>
                 </div>
               </div>
