@@ -1,0 +1,13 @@
+.nav-container {
+    width: 100%;
+}
+
+.nav-link:hover{
+    background-color: blue;
+    color: white;
+}
+
+.nav-img {
+    display:flex;
+    height: 100px;
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+<<<<<<< HEAD
 //pages of our application to be routed
 import { HomeComponent } from './home/home.component';
 import { TopsComponent } from './tops/tops.component';
@@ -26,6 +27,23 @@ const routes: Routes = [
   { path: '**', component: PageNotFoundComponent },
 
   { path: "tops", component: TopsComponent },
+=======
+import { HatsComponent } from './hats/hats.component';
+import { HomeComponent } from './home/home.component';
+import { PantsComponent } from './pants/pants.component';
+import { ShirtsComponent } from './shirts/shirts.component';
+import { ShoesComponent } from './shoes/shoes.component';
+import { WatchesComponent } from './watches/watches.component';
+
+const routes: Routes = [
+  {path: "", redirectTo: "/home", pathMatch: "full"},
+  {path: "home", component: HomeComponent},
+  {path: "shirts", component: ShirtsComponent },
+  { path: "hats", component: HatsComponent },
+  { path: "shoes", component: ShoesComponent },
+  { path: "pants", component: PantsComponent },
+  { path: "watches", component: WatchesComponent }
+>>>>>>> e29120dd32d710376ec4f8dd4feb837ce738dc0e
 ];
 
 

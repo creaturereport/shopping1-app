@@ -1,0 +1,22 @@
+<app-nav></app-nav>
+<!-- Display options for hats -->
+<div class="hatsContainer"> 
+    <div *ngFor="let hat of hatStyles">
+        
+        <div class="cardStyle">
+            <div class="card" style="width: 18rem;">
+                <img src={{hat.image_url}} 
+                    class="card-img-top"
+                    width="290px"
+                    height="300px" 
+                    alt="hats">
+                <div class="card-body">
+                  <h5 class="card-title">{{ hat.name }}</h5>
+                  <p class="card-text">${{ hat.price }}</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+        </div>
+    
+    </div>
+</div>
