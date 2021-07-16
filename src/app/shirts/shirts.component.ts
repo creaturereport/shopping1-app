@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../products.service';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-shirts',
@@ -16,7 +16,8 @@ export class ShirtsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllShirts
+    console.log("On shirts Component")
+    this.getAllShirts()
   }
 
   getAllShirts(){
