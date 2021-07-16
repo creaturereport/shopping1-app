@@ -1,0 +1,22 @@
+<app-nav></app-nav>
+<!-- Display options for shirts -->
+<div class="shirtsContainer"> 
+    <div *ngFor="let shirt of styleShirts">
+        
+        <div class="cardStyle">
+            <div class="card" style="width: 18rem;">
+                <img src={{shirt.image_url}} 
+                    class="card-img-top"
+                    width="290px"
+                    height="300px" 
+                    alt="shirts">
+                <div class="card-body">
+                  <h5 class="card-title">{{ shirt.name }}</h5>
+                  <p class="card-text">${{ shirt.price }}</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+        </div>
+    
+    </div>
+</div>
