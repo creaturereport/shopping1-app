@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InventoryService } from 'src/inventory/inventory.service';
 
 @Component({
   selector: 'app-accessories',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accessories.component.css']
 })
 export class AccessoriesComponent implements OnInit {
+  styleAcc: any;
 
-  constructor() { }
+  constructor(private inventoryService: InventoryService){}
 
-  ngOnInit(): void {
+  getAccessories(){
+    this.inventoryService.getAccessories().subscribe(inventory =>{
+      this.styleAcc = inventory
+    });
+  }
+
+  ngOnInit() {
+    this.getAccessories();
   }
 
 }

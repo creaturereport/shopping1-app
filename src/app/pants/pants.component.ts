@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {InventoryService} from 'src/inventory/inventory.service';
 
 @Component({
   selector: 'app-pants',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pants.component.css']
 })
 export class PantsComponent implements OnInit {
+  stylePants: any;
 
-  constructor() { }
+  constructor(private inventoryService: InventoryService){}
 
-  ngOnInit(): void {
+  getPants(){
+    this.inventoryService.getPants().subscribe(inventory =>{
+      this.stylePants = inventory
+    });
+  }
+
+  ngOnInit() {
+    this.getPants();
   }
 
 }

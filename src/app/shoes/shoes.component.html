@@ -1,1 +1,20 @@
-<p>shoes works!</p>
+<div class="shoesContainer"> 
+    <div *ngFor="let shoe of styleShoes">
+        
+        <div class="cardStyle">
+            <div class="card" style="width: 18rem;">
+                <img src={{shoe.image_url}} 
+                    class="card-img-top"
+                    width="290px"
+                    height="300px" 
+                    alt="shoes">
+                <div class="card-body">
+                  <h5 class="card-title">{{ shoe.name }}</h5>
+                  <p class="card-text">${{ shoe.price }}</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+        </div>
+    
+    </div>
+</div>

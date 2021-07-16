@@ -1,0 +1,73 @@
+
+.logoHolder {
+     /* The image used */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBqy7Ys-UBvR_ltlAO-Tqb_4HKDzgY4li99A&usqp=CAU");
+  
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+.blur {
+  height: 90px;
+  position:relative top;
+  font-size:40px;
+  text-align:center;
+  text-shadow: 0 1px 0 rgba();
+  animation: myfirst 5s linear 2s infinite alternate;
+}
+@keyframes myfirst {
+  0%   {background-color:rgba(201, 40, 40, 0.596); left:0px; top:0px;}
+  25%  {background-color:rgba(155, 155, 27, 0.801); left:200px; top:0px;}
+  50%  {background-color:rgba(41, 41, 231, 0.63); left:200px; top:200px;}
+  75%  {background-color:rgb(116, 150, 116); left:0px; top:200px;}
+  100% {background-color:rgba(153, 65, 65, 0.623); left:0px; top:0px;}
+}
+
+.blur:before {
+  content: "";
+  position: top;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  filter: blur(5px);
+  z-index:0;
+}
+.blur span {
+  position:relative;
+  z-index:1;
+}
+.basket{
+  height: auto;
+  width: auto;
+  max-height: 32px;
+  max-width: 250px;
+}
+.pull-right {
+  float: right;
+}
+

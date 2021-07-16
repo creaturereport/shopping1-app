@@ -1,1 +1,20 @@
-<p>accessories works!</p>
+<div class="accContainer"> 
+    <div *ngFor="let acc of styleAcc">
+        
+        <div class="cardStyle">
+            <div class="card" style="width: 18rem;">
+                <img src={{acc.image_url}} 
+                    class="card-img-top"
+                    width="290px"
+                    height="300px" 
+                    alt="acc">
+                <div class="card-body">
+                  <h5 class="card-title">{{ acc.name }}</h5>
+                  <p class="card-text">${{ acc.price }}</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+        </div>
+    
+    </div>
+</div>

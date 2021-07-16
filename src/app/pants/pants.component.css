@@ -1,0 +1,15 @@
+.cardStyle{
+    align-items: center;  
+    
+}
+
+.pantsContainer{
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        flex-flow: row wrap;
+}
+

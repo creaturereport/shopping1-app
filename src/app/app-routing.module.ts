@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { ShoesComponent } from './shoes/shoes.component';
 import { PantsComponent } from './pants/pants.component';
 import { ShirtsComponent } from './shirts/shirts.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CartComponent} from './cart/cart.component';
 
 
 
@@ -14,9 +16,10 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "shirts", component: ShirtsComponent },
   {path: "pants", component: PantsComponent },
-  {path: "hats", component:HatsComponent},
+  {path: "hats", component: HatsComponent},
   {path: "shoes", component:ShoesComponent},
-  {path: "accessories", component: AccessoriesComponent}
+  {path: "accessories", component: AccessoriesComponent},
+  {path: "cart", component: CartComponent}
 ];
 
 @NgModule({
@@ -24,4 +27,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent,ShirtsComponent,PantsComponent,HatsComponent,AccessoriesComponent]
+export const routingComponents = [HomeComponent,ShirtsComponent,PantsComponent,HatsComponent,AccessoriesComponent,ShoesComponent,NavbarComponent,CartComponent];

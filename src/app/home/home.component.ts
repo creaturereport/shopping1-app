@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { InventoryService } from 'src/inventory/inventory.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  eachItem: any;
 
-  ngOnInit(): void {
+  constructor(private inventoryService: InventoryService){}
+
+  getCategories(){
+    this.inventoryService.getCategories().subscribe(inventory =>{
+      this.eachItem = inventory
+    });
+  }
+  
+
+  ngOnInit() {
+    this.getCategories();
   }
 
 }
