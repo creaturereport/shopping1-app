@@ -1,18 +1,18 @@
 <app-nav></app-nav>
-<!-- Display options for shirts -->
-<div class="shirtsContainer"> 
-    <div *ngFor="let shirt of styleShirts">
+<!-- Display options for pants -->
+<div class="pantsContainer"> 
+    <div *ngFor="let pant of pantStyles">
         
         <div class="cardStyle">
             <div class="card" style="width: 18rem;">
-                <img src={{shirt.image_url}} 
+                <img src={{pant.image_url}} 
                     class="card-img-top"
                     width="290px"
                     height="300px" 
-                    alt="shirts">
+                    alt="hats">
                 <div class="card-body">
-                  <h5 class="card-title">{{ shirt.name }}</h5>
-                  <p class="card-text">${{ shirt.price }}</p>
+                  <h5 class="card-title">{{ pant.name }}</h5>
+                  <p class="card-text">${{ pant.price }}</p>
                   <a href="#" class="btn btn-primary">Add to Cart</a>
                 </div>
               </div>
