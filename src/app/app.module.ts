@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ShirtsComponent } from './shirts/shirts.component';
 import { TopsComponent } from './tops/tops.component';
 import { BottomsComponent } from './bottoms/bottoms.component';
 import { ShoesComponent } from './shoes/shoes.component';
@@ -16,7 +15,6 @@ import { HatsComponent } from './hats/hats.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    ShirtsComponent,
     TopsComponent,
     BottomsComponent,
     ShoesComponent,

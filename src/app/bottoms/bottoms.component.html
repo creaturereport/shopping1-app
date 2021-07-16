@@ -1,1 +1,14 @@
-<p>bottoms works!</p>
+<app-nav-bar></app-nav-bar>
+
+<div class="bottomsContainer">
+  <div *ngFor="let pants of bottomsData">
+    <div class="card" style="width: 18rem">
+      <img [src]="pants.image_url" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ pants.name }}</h5>
+        <p class="card-text">${{ pants.price }}</p>
+        <a class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+</div>

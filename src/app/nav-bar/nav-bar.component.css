@@ -1,0 +1,11 @@
+.nav-link {
+  color: lightgray;
+}
+
+.nav-link:hover {
+  color: darkgray;
+}
+
+.navbar {
+  margin-bottom: 1rem;
+}

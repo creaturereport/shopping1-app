@@ -1,1 +1,14 @@
-<p>tops works!</p>
+<app-nav-bar></app-nav-bar>
+
+<div class="topsContainer">
+  <div *ngFor="let shirt of styleShirts">
+    <div class="card" style="width: 18rem">
+      <img [src]="shirt.image_url" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ shirt.name }}</h5>
+        <p class="card-text">${{ shirt.price }}</p>
+        <a class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+</div>

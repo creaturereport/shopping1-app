@@ -1,1 +1,14 @@
-<p>shoes works!</p>
+<app-nav-bar></app-nav-bar>
+
+<div class="shoesContainer">
+  <div *ngFor="let shoes of shoesData">
+    <div class="card" style="width: 18rem">
+      <img [src]="shoes.image_url" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ shoes.name }}</h5>
+        <p class="card-text">${{ shoes.price }}</p>
+        <a class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+</div>

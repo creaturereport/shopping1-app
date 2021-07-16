@@ -1,1 +1,14 @@
-<p>hats works!</p>
+<app-nav-bar></app-nav-bar>
+
+<div class="hatsContainer">
+  <div *ngFor="let hats of hatsData">
+    <div class="card" style="width: 18rem">
+      <img [src]="hats.image_url" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ hats.name }}</h5>
+        <p class="card-text">${{ hats.price }}</p>
+        <a class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+</div>
