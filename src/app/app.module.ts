@@ -12,7 +12,7 @@ import { AccesoriesComponent } from './accesories/accesories.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HatsComponent } from './hats/hats.component';
 
-import { ProductService } from "./services/productService/product-service.service"
+import { ProductService } from "./services/product-service.service"
 
 @NgModule({
   declarations: [
