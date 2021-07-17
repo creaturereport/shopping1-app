@@ -10,7 +10,7 @@ export class ProductsService {
 
   //Define Api Details
 
-  shirtsUrl = 'https://productlist-31b15-default-rtdb.firebaseio.com/Shirts.json'
+  shirtsUrl = 'https://shopappproducts-default-rtdb.firebaseio.com/Shirts.json'
   // pantsUrl
   // watchesUrl
 
