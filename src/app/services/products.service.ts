@@ -27,7 +27,21 @@ export class ProductsService {
     getShirts(): Observable<Product>{
       return this.http.get<Product>(this.shirtsUrl)
     }
-    // getPants(): Observable<Product>{
-    //   return this.http.get<Product>(this.shirtsUrl)
-    // }
+
+    getHats(): Observable<Product>{
+      return this.http.get<Product>(this.hatsUrl)
+    }
+
+    getPants(): Observable<Product>{
+      return this.http.get<Product>(this.pantsUrl)
+    }
+
+    getShoes(): Observable<Product>{
+      return this.http.get<Product>(this.shoesUrl)
+    }
+
+    getWatches(): Observable<Product>{
+      return this.http.get<Product>(this.watchesUrl)
+    }
+   
 }
