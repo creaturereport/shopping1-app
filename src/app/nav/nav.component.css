@@ -1,10 +1,17 @@
 .nav-container {
     width: 100%;
+    background-color: gray;
+    
+}
+
+.nav-link{
+    color: red;
 }
 
 .nav-link:hover{
-    background-color: blue;
+    background-color: #F14156;
     color: white;
+    transition: 0.5s all ease;
 }
 
 .nav-img {
