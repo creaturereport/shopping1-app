@@ -7,6 +7,7 @@ import { ShirtsComponent } from './shirts/shirts.component';
 import { ShoesComponent } from './shoes/shoes.component';
 import { WatchesComponent } from './watches/watches.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
+import { SocksComponent } from './socks/socks.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full"},
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: "shoes", component: ShoesComponent },
   { path: "pants", component: PantsComponent },
   { path: "watches", component: WatchesComponent },
+  { path: "socks", component: SocksComponent },
   //wild card route for 404 
   { path: "**",  component: PageNotFoundComponent }
 ];
