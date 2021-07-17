@@ -11,7 +11,7 @@ export class ProductsService {
   //Define Api Details
 
   hatsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Hats.json'
-  pantsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Pants'
+  pantsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Pants.json'
   shirtsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Shirts.json'
   shoesUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Shoes.json'
   watchesUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Watches.json'
