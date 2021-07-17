@@ -14,6 +14,7 @@ export class ProductsService {
   pantsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Pants.json'
   shirtsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Shirts.json'
   shoesUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Shoes.json'
+  socksUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Socks.json'
   watchesUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Watches.json'
 
   
@@ -40,6 +41,10 @@ export class ProductsService {
 
     getShoes(): Observable<Product>{
       return this.http.get<Product>(this.shoesUrl)
+    }
+
+    getSocks(): Observable<Product>{
+      return this.http.get<Product>(this.socksUrl)
     }
 
     getWatches(): Observable<Product>{
