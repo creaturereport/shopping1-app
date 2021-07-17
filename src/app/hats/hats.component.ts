@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product-service.service';
 
 @Component({
   selector: 'app-hats',
@@ -7,42 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HatsComponent implements OnInit {
 
-  constructor() { }
+  hatsData: any = []
+
+  constructor(public getProductsAPI: ProductService) { }
 
   ngOnInit(): void {
+    this.getProducts("Hats")
   }
 
-  hatsData: any = [
-    {
-       id: 1, 
-      name: "Hat",
-      price: "25.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCJif0dYUsQ6JLotQ8PsHD8kdcTA5uVmYp-Q&usqp=CAU"
-    },
-    {
-       id: 2, 
-      name: "Hat",
-      price: "25.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCJif0dYUsQ6JLotQ8PsHD8kdcTA5uVmYp-Q&usqp=CAU"
-    },
-    {
-       id: 3, 
-      name: "Hat",
-      price: "25.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCJif0dYUsQ6JLotQ8PsHD8kdcTA5uVmYp-Q&usqp=CAU"
-    },
-    {
-       id: 4, 
-      name: "Hat",
-      price: "25.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCJif0dYUsQ6JLotQ8PsHD8kdcTA5uVmYp-Q&usqp=CAU"
-    },
-    {
-       id: 5, 
-      name: "Hat",
-      price: "25.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCJif0dYUsQ6JLotQ8PsHD8kdcTA5uVmYp-Q&usqp=CAU"
-    },
-  ]
+  getProducts(Item: string) {
+    return this.getProductsAPI.getProduct(Item).subscribe((data: {}) => {
+      this.hatsData = data;
+    })
+  }
 
 }

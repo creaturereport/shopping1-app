@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product-service.service';
+
 
 @Component({
   selector: 'app-shoes',
@@ -6,49 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shoes.component.css']
 })
 export class ShoesComponent implements OnInit {
+  
+  shoesData: any = []
 
-  constructor() { }
+  constructor(public getProductsAPI: ProductService) { }
 
   ngOnInit(): void {
+    this.getProducts("Shoes")
   }
 
-  shoesData: any = [
-    {
-       id: 1, 
-      name: "Sneakers",
-      price: "120.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBcuecV7DfF2yiQZk0aWPCAGf7yeapUcgMxA&usqp=CAU"
-    },
-    {
-       id: 2, 
-      name: "Socks",
-      price: "5.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToEP8FqnEvUkd59rlWLVgLqIXkFFISbC1nWfFlOVzZdr78x5HD2xmI4wXyBYh_FZ6Glg3BwtQ&usqp=CAc"
-    },
-    {
-       id: 3, 
-      name: "Sneakers",
-      price: "120.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBcuecV7DfF2yiQZk0aWPCAGf7yeapUcgMxA&usqp=CAU"
-    },
-    {
-       id: 4, 
-      name: "Socks",
-      price: "5.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToEP8FqnEvUkd59rlWLVgLqIXkFFISbC1nWfFlOVzZdr78x5HD2xmI4wXyBYh_FZ6Glg3BwtQ&usqp=CAc"
-    },
-    {
-       id: 5, 
-      name: "Sneakers",
-      price: "120.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBcuecV7DfF2yiQZk0aWPCAGf7yeapUcgMxA&usqp=CAU"
-    },
-    {
-       id: 6, 
-      name: "Socks",
-      price: "5.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToEP8FqnEvUkd59rlWLVgLqIXkFFISbC1nWfFlOVzZdr78x5HD2xmI4wXyBYh_FZ6Glg3BwtQ&usqp=CAc"
-    },
-  ]
+  getProducts(Item: string) {
+    return this.getProductsAPI.getProduct(Item).subscribe((data: {}) => {
+      this.shoesData = data;
+    })
+  }
 
 }

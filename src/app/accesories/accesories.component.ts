@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product-service.service';
+
 
 @Component({
   selector: 'app-accesories',
@@ -7,36 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccesoriesComponent implements OnInit {
 
-  constructor() { }
+  accesoriesData: any =[]
+  
+  constructor(public getProductsAPI: ProductService) { }
 
   ngOnInit(): void {
+    this.getProducts("Watches")
   }
 
-  accesoriesData: any =[
-    {
-       id: 1, 
-      name: "Watch",
-      price: "180.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjOF4WuAz2_Jlm0daJ9ap0HoIGyBfIgN3bnA&usqp=CAU"
-    },
-    {
-       id: 2, 
-      name: "Watch",
-      price: "180.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjOF4WuAz2_Jlm0daJ9ap0HoIGyBfIgN3bnA&usqp=CAU"
-    },
-    {
-       id: 3, 
-      name: "Watch",
-      price: "180.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjOF4WuAz2_Jlm0daJ9ap0HoIGyBfIgN3bnA&usqp=CAU"
-    },
-    {
-       id: 4, 
-      name: "Watch",
-      price: "180.00",
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjOF4WuAz2_Jlm0daJ9ap0HoIGyBfIgN3bnA&usqp=CAU"
-    },
-  ]
+  getProducts(Item: string) {
+    return this.getProductsAPI.getProduct(Item).subscribe((data: {}) => {
+      this.accesoriesData = data;
+    })
+  }
 
 }

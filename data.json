@@ -1,0 +1,132 @@
+{
+    "Shirts": [
+        {
+            "id": 1.1,
+            "name": "Jersey",
+            "price": "80.00",
+            "image_url": "https://cdn.shopify.com/s/files/1/0264/0225/8995/products/USASMZ2006_A.jpg?v=1591293163"
+        },
+        {
+            "id": 1.2,
+            "name": "Hoodie",
+            "price": "50.00",
+            "image_url": "https://i1.adis.ws/i/easton/M10HOODIE_ATHLETICHEATHER_01/M10TECHFLEECEHOODIE-ATHLETICHEATHER?$large$"
+        },
+        {
+            "id": 1.3,
+            "name": "Long-Sleeve",
+            "price": "30.00",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrbWLxw63leFHeHPwSY-Eyqhk1yYla2AkjVd55JPZIJsLqlWL6SdGwWOqMKqvEXhWa2r92urg&usqp=CAc"
+        },
+        {
+            "id": 1.4,
+            "name": "T-Shirt",
+            "price": "25.00",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRhMTDsVj2pDUUDCFWe_gHluKmsXEU6W28cQ&usqp=CAU"
+        }
+    ],
+    "Pants": [
+        {
+            "id": 2.1,
+            "name": "Cargo Pants",
+            "price": "29.50",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMmVDrWDGbh2lJO2XSOsidOUpVzwBtaisANA&usqp=CAU"
+        },
+        {
+            "id": 2.2,
+            "name": "Jeans",
+            "price": "30.25",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdo0bijxDt5FYH8uxw-sI5iJrdXjNPKRseOCPrMGuTcJCY3YwoGjDDVQu_n5o9IVfEAtfWYXk&usqp=CAc"
+        },
+        {
+            "id": 2.3,
+            "name": "Slacks",
+            "price": "50.50",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ySdLJrWZ4CZwuT1chwbMccnnawx7fIm0JA&usqp=CAU"
+        },
+        {
+            "id": 2.4,
+            "name": "Leggings",
+            "price": "10.50",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKNTx_C9G_qsI_3C_3TqfS80bYQqFWAgwqRw&usqp=CAU"
+        }
+    ],
+    "Hats": [
+        {
+            "id": 3.1,
+            "name": "Beenies",
+            "price": "25.00",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFQ99RMmxrRwU9Z6SVKOP5VBauJ9NVdWXag&usqp=CAU"
+        },
+        {
+            "id": 3.2,
+            "name": "Bucket Hats",
+            "price": "55.00",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTULOJOjFTZKRrKK93BmyHW7VMg_phzhXgJbg&usqp=CAU"
+        },
+        {
+            "id": 3.3,
+            "name": "Duck-Hats",
+            "price": "20.00",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7qe113hrsng6xPSeZZlnh1In1APtARjEgaw&usqp=CAU"
+        },
+        {
+            "id": 3.4,
+            "name": "Cowboy Hats",
+            "price": "45.00",
+            "image_url": "https://www.hutstuebele.com/pic/Leather-cowboy-hat-with-a-wide-brim-by-Scippis.41882a.jpg"
+        }
+    ],
+    "Shoes":[
+        {
+            "id": 4.1, 
+           "name": "Sneakers",
+           "price": "120.00",
+           "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsS5zxTsHX6RC16XAYEZ3XqDo1ql-ygFIDkg&usqp=CAU"
+         },
+        {
+            "id": 4.2, 
+           "name": "Sandals",
+           "price": "130.00",
+           "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRagOk8RJlnjtDwZQ6-h6mcRbpGhz7HWpMkXw&usqp=CAU"
+         },
+        {
+            "id": 4.3, 
+           "name": "Dress Shoes",
+           "price": "140.00",
+           "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO7SNL8KEIl64KqpZw0o1dHbMRUaZpuhCOMQ&usqp=CAU"
+         },
+        {
+            "id": 4.4, 
+           "name": "Combat Boots",
+           "price": "290.00",
+           "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-a9rpiDmzQ9Bt_GfRSvNrSKaa-vSkAEB86w&usqp=CAU"
+         }
+    ],
+    "Watches":[
+        {
+            "id": 5.1, 
+           "name": "Watch - Women",
+           "price": "500.00",
+           "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSplITWSHDrt5oHWhG0Qtl-soCPtqpW0G8U0g&usqp=CAU"
+         },
+        {
+            "id": 5.2, 
+           "name": "iWatch",
+           "price": "999.00",
+           "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2F-PnDSol7J8twE95NG8Yh7PIDc50QA1CbdN8n7xIKDexC-MAXu3tR9J7fQ&usqp=CAc"
+         },
+        {
+            "id": 5.3, 
+           "name": "Smart",
+           "price": "700.00",
+           "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEIPi49HcXpkPc96jOnbn6Yd9Pe-yOLXb5pQ&usqp=CAU"
+         },
+        {
+            "id": 5.4, 
+           "name": "Watch - Men",
+           "price": "800.00",
+           "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIVqQY2xl_w0AFEBgPKMaACHOY4Zxlff3WgsEgSQgxZ6Sv-Yo6-lrs5PYkVj9tciOUmaZq5A&usqp=CAc"
+         }
+    ]
+}
