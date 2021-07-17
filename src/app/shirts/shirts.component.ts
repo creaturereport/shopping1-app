@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShirtsComponent implements OnInit {
 
+<<<<<<< Updated upstream
   constructor() { 
     console.log(this.styleShirts)
   }
@@ -40,6 +41,21 @@ export class ShirtsComponent implements OnInit {
       image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRhMTDsVj2pDUUDCFWe_gHluKmsXEU6W28cQ&usqp=CAU"
     }
   ]
+=======
+  constructor(public getProductsApi: ProductsService) { }
+
+  ngOnInit(): void {
+    this.getProducts();
+  }
+  
+  getProducts(){
+    return this.getProductsApi.getProducts("Shirts").subscribe((data: {}) =>{
+      this.styleShirts = data;
+      console.log(this.styleShirts)
+    })
+  }
+ 
+>>>>>>> Stashed changes
 
   
 }

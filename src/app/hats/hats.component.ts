@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-hats',
@@ -6,19 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hats.component.css']
 })
 export class HatsComponent implements OnInit {
+  hatStyles: any = []
 
-  constructor() { }
+  constructor(public getProductsApi: ProductsService) { }
 
   ngOnInit(): void {
+    this.getProducts();
   }
 
-  hatStyles: any = [
-    {
-      id: 6, 
-     name: "Hat",
-     price: "25.00",
-     image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCJif0dYUsQ6JLotQ8PsHD8kdcTA5uVmYp-Q&usqp=CAU"
-   }, 
-  ]
+  getProducts(){
+    return this.getProductsApi.getProducts("Hats").subscribe((data: {}) =>{
+      this.hatStyles = data;
+    })
+  }  
 
 }

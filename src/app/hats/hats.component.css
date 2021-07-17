@@ -1,3 +1,18 @@
+.hatsContainer{
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    flex-flow: row wrap;
+}
+
+.cardStyle{
+  align-items: center;  
+  
+}
+
 .btn:hover{
     background-color: white;
     color: blue;
