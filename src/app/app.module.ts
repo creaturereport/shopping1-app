@@ -12,6 +12,7 @@ import { WatchesComponent } from './watches/watches.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductsService } from './services/products.service';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
+import { SocksComponent } from './socks/socks.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
     PantsComponent,
     WatchesComponent,
     NavComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SocksComponent
   ],
   imports: [
     BrowserModule,
