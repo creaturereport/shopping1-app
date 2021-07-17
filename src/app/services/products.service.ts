@@ -11,8 +11,10 @@ export class ProductsService {
   //Define Api Details
 
   shirtsUrl = 'https://shopappproducts-default-rtdb.firebaseio.com/Shirts.json'
-  // pantsUrl
-  // watchesUrl
+  hatsUrl = 'https://shopappproducts-default-rtdb.firebaseio.com/Hats.json'
+  pantsUrl = 'https://shopappproducts-default-rtdb.firebaseio.com/Pants.json'
+  shoesUrl = 'https://shopappproducts-default-rtdb.firebaseio.com/Shoes.json'
+  watchesUrl = 'https://shopappproducts-default-rtdb.firebaseio.com/Watches.json'
 
   constructor(private http: HttpClient) { }
     // Http Options
