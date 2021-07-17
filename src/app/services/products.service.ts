@@ -10,9 +10,13 @@ export class ProductsService {
 
   //Define Api Details
 
-  shirtsUrl = 'https://productlist-31b15-default-rtdb.firebaseio.com/Shirts.json'
-  // pantsUrl
-  // watchesUrl
+  hatsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Hats.json'
+  pantsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Pants'
+  shirtsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Shirts.json'
+  shoesUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Shoes.json'
+  watchesUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Watches.json'
+
+  
 
   constructor(private http: HttpClient) { }
     // Http Options
@@ -22,10 +26,24 @@ export class ProductsService {
       })
     }  
 
+    getHats(): Observable<Product>{
+      return this.http.get<Product>(this.hatsUrl)
+    }
+    
+    getPants(): Observable<Product>{
+      return this.http.get<Product>(this.pantsUrl)
+    }
+    
     getShirts(): Observable<Product>{
       return this.http.get<Product>(this.shirtsUrl)
     }
-    // getPants(): Observable<Product>{
-    //   return this.http.get<Product>(this.shirtsUrl)
-    // }
+
+    getShoes(): Observable<Product>{
+      return this.http.get<Product>(this.shoesUrl)
+    }
+
+    getWatches(): Observable<Product>{
+      return this.http.get<Product>(this.watchesUrl)
+    }
+    
 }
