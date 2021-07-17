@@ -10,7 +10,6 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full"},
-  { path: "^^", redirectTo: "/home", pathMatch: "full"},
   { path: "home", component: HomeComponent},
   { path: "shirts", component: ShirtsComponent },
   { path: "hats", component: HatsComponent },
@@ -18,7 +17,7 @@ const routes: Routes = [
   { path: "pants", component: PantsComponent },
   { path: "watches", component: WatchesComponent },
   //wild card route for 404 
-  { path: "**", pathMatch: 'full', component: PageNotFoundComponent }
+  { path: "**",  component: PageNotFoundComponent }
 ];
 
 @NgModule({

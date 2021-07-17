@@ -11,7 +11,7 @@ import { PantsComponent } from './pants/pants.component';
 import { WatchesComponent } from './watches/watches.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductsService } from './services/products.service';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     PantsComponent,
     WatchesComponent,
     NavComponent,
-    PagenotfoundComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
