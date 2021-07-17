@@ -1,20 +1,24 @@
 .nav-container {
     width: 100%;
-    background-color: gray;
-    
+    background: linear-gradient(to top, transparent 0%, rgba(236, 38, 38, 0.445) 50%);
 }
 
 .nav-link{
-    color: red;
+    color: white;
+    font-weight: 500% !important;
+    display: flex;
+    flex-wrap: wrap;
+    
 }
 
 .nav-link:hover{
     background-color: #F14156;
     color: white;
-    transition: 0.5s all ease;
+    transition: all 0.5s ease;
 }
 
 .nav-img {
     display:flex;
     height: 100px;
 }
+
