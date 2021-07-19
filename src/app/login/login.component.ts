@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    console.log("testing")
+    console.log(form.value.userName)
   }
+
 }

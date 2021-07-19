@@ -2,10 +2,19 @@
     <div class="login">
         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
             <div class="form-group">
-              <label for="userNameInput">User Name</label>
-              <input type="text" class="form-control" id="inputUsername" aria-describedby="emailHelp" placeholder="Enter First Name">
+              <label for="userName">User Name</label>
+              <input 
+              type="text" 
+              name="userName"
+              class="form-control" 
+              id="inputUsername" 
+              aria-describedby="emailHelp" 
+              placeholder="Enter First Name"
+              ngModel
+              required
+              >
             </div>
-            <button type="submit" class="btn btn-primary" >Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
     </div>
 
