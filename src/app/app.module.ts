@@ -12,6 +12,7 @@ import { WatchesComponent } from './watches/watches.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductsService } from './services/products.service';
 import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
