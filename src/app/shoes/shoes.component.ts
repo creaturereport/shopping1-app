@@ -17,7 +17,7 @@ export class ShoesComponent implements OnInit {
   }
 
   getAllShoes(){
-    return this.getShoesApi.getPants().subscribe((data: {}) =>{
+    return this.getShoesApi.getShoes().subscribe((data: {}) =>{
       this.shoeStyles = data;
     })
   }
