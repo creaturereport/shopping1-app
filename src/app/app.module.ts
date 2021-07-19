@@ -11,6 +11,7 @@ import { PantsComponent } from './pants/pants.component';
 import { WatchesComponent } from './watches/watches.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductsService } from './services/products.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProductsService } from './services/products.service';
     ShoesComponent,
     PantsComponent,
     WatchesComponent,
-    NavComponent
+    NavComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
