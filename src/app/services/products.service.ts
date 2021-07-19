@@ -10,11 +10,11 @@ export class ProductsService {
 
   //Define Api Details
 
-  shirtsUrl = 'https://shopping-app-57c19-default-rtdb.firebaseio.com/Shirts.json'
-  pantsUrl = 'https://shopping-app-57c19-default-rtdb.firebaseio.com/Pants.json'
-  watchesUrl = 'https://shopping-app-57c19-default-rtdb.firebaseio.com/Watches.json'
-  hatsUrl = 'https://shopping-app-57c19-default-rtdb.firebaseio.com/Hats.json'
-  shoesUrl = 'https://shopping-app-57c19-default-rtdb.firebaseio.com/Shoes.json'
+  shirtsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Shirts.json'
+  pantsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Pants.json'
+  watchesUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Watches.json'
+  hatsUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Hats.json'
+  shoesUrl = 'https://u2nv-3d4ed-default-rtdb.firebaseio.com/Shoes.json'
 
   constructor(private http: HttpClient) { }
     // Http Options
