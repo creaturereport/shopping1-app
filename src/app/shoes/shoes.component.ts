@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-shoes',
@@ -6,19 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shoes.component.css']
 })
 export class ShoesComponent implements OnInit {
+  shoeStyles: any = [];
 
-  constructor() { }
+  constructor(public getShoesApi: ProductsService) { }
 
   ngOnInit(): void {
+    console.log('on shoes comp')
+    this.getAllShoes();
   }
 
-  shoeStyles: any = [
-    {
-      id: 7, 
-     name: "Sneakers",
-     price: "120.00",
-     image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBcuecV7DfF2yiQZk0aWPCAGf7yeapUcgMxA&usqp=CAU"
-   },
-  ]
+  getAllShoes(){
+    return this.getShoesApi.getShoes().subscribe((data: {}) =>{
+      this.shoeStyles = data;
+    })
+  }
 
 }
