@@ -20,9 +20,15 @@ export class LoginComponent implements OnInit {
 
   isValidUser: boolean = false;
 
+  isSigningUp: boolean = false;
+
+  onSignUp(){
+    this.isSigningUp = true;
+  }
+
   onSubmit(form: NgForm){
     return this.loginApi.checkUser(form.value.userName).subscribe((data: {}) => {
-      if(data === null) {
+      if(data === null || form.value.userName === "") {
         this.isValidUser = true;
       } else {
           this.router.navigateByUrl('/home');

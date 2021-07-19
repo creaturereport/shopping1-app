@@ -1,8 +1,9 @@
 <div class="login-form" style="display: flex">
-    <div class="login">
+    <div class="login, text-center">
+      <img src="../../assets/4u2nv.png" alt width="230" height="130"/>
         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <h1 id="header">Please sign in</h1>
             <div class="form-group">
-              <label for="userName">LOGIN</label>
               <input 
               type="text" 
               name="userName"
@@ -16,11 +17,14 @@
             </div>
             <!-- Directive to alert user of invalid username -->
             <div *ngIf="isValidUser" style="color: red">User does not exist. Please try again.</div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div id="buttonBox" class="text-center">
+              <button id="signin" type="submit" class="btn btn-primary">Sign in</button>
+              <button id="signup" type="button" class="btn btn-primary" (click)="onSignUp()">Sign up</button>
+            </div>
           </form>
     </div>
 
-    <div class="signup">
-
+    <div *ngIf="isSigningUp" class="signup">
+      You should only see this if signing up
     </div>
 </div>

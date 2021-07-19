@@ -1,3 +1,26 @@
 /* align left login-form*/
+.login-form{
+    justify-content: space-evenly;
+    flex-direction: row;
+}
 
+#header{
+    display: flex;
+    justify-content: center;
+    font-size: large;
+}
+#signin{
+    display: flex;
+    justify-content: center;
+}
+#signup{
+    display: flex;
+    justify-content: center;
+}
+
+#buttonBox{
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
 /* align right signup */
