@@ -21,26 +21,43 @@ export class LoginComponent implements OnInit {
 
   invalidUser: boolean = false;
 
-  /* onSubmit(form: NgForm){
-    return this.loginApi.checkUser(form.value.userName).subscribe((data: {}) => {
+  logIn(x: NgForm) {
+    //console.log(x);
+    //console.log(x.form.value.firstName);
+    return this.loginApi.checkUsers().subscribe((data: {}) => {
+      //console.log(data)
+      let users = []
+      for (let keys of Object.values(data)) {
+        //console.log(keys)
+        let yup: any = keys
+        //console.log(yup.firstName)
+        users.push(yup.firstName)
+      }
+      //console.log(users)
+      if (users.includes(x.form.value.firstName)) {
+        console.log("yep")
+        this.invalidUser = false;
+      }
+      else {
+        console.log("nope")
+        this.invalidUser = true;
+      }
+      }
+    )
+    /* return this.loginApi.checkUser(x.form.value.firstName).subscribe((data: {}) => {
       if(data === null) {
         this.invalidUser = true;
       } else {
           this.router.navigateByUrl('/home');
         };
       }
-    )
-  } */
-
-  logIn(x: any) {
-    console.log(x);
-    console.log(x.form.value);
-    x.reset
+    ) */
+    /* x.reset() */
   }
 
-  newUser(x: any) {
-    console.log(x)
-    console.log(x.form.value)
+  newUser(x: NgForm) {
+    //console.log(x)
+    //console.log(x.form.value)
     let newUser: NewUser = {
       firstName: x.form.value.firstName,
       lastName: x.form.value.lastName,
@@ -51,8 +68,11 @@ export class LoginComponent implements OnInit {
       phoneNumber: x.form.value.phoneNumber,
       email: x.form.value.email,
     }
-    console.log(newUser)
-    x.reset()
+    //console.log(newUser)
+    return this.loginApi.newUser(newUser).subscribe((data: {})=>{
+      //console.log(data)
+    })
+    /* x.reset() */
   }
 
 }

@@ -7,7 +7,6 @@ import { NewUser } from '../classes/new-user';
   providedIn: 'root'
 })
 export class LoginService {
-  products_URL= "https://u2nv-users-default-rtdb.firebaseio.com/"
   users_URL = "https://userdatabase-86f8f-default-rtdb.firebaseio.com/"
 
   constructor(private http: HttpClient) { }
@@ -22,6 +21,10 @@ export class LoginService {
 
     checkUser(item: string): Observable<any>{
       return this.http.get<any>(this.users_URL + item + ".json")
+    }
+    
+    checkUsers(): Observable<any>{
+      return this.http.get<any>(this.users_URL + ".json")
     }
 
     newUser(userObject: NewUser): Observable<any> {

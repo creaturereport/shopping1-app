@@ -11,6 +11,9 @@
         id="firstName"
         type="text"
       />
+      <div *ngIf="invalidUser" class="alert alert-danger">
+        Incorrect Name, Please Try Again.
+      </div>
     </div>
     <button
       [disabled]="logInForm.invalid"
