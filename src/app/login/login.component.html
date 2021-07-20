@@ -4,6 +4,7 @@
     <div class="form">
       <label for="firstName">FirstName</label>
       <input
+        required
         #model="ngModel"
         ngModel
         name="firstName"
@@ -11,24 +12,36 @@
         type="text"
       />
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button
+      [disabled]="logInForm.invalid"
+      type="submit"
+      class="btn btn-primary"
+    >
+      Login
+    </button>
   </form>
   <form class="block" (ngSubmit)="newUser(newUserForm)" #newUserForm="ngForm">
     <h3>Sign Up!</h3>
     <div class="form">
       <label for="firstName">FirstName</label>
-      <input ngModel name="firstName" id="firstName" type="text" />
+      <input required ngModel name="firstName" id="firstName" type="text" />
       <label for="lastName">lastName</label>
-      <input ngModel name="lastName" id="lastName" type="text" />
+      <input required ngModel name="lastName" id="lastName" type="text" />
       <label for="email">email</label>
-      <input ngModel name="email" id="email" type="text" />
+      <input required ngModel name="email" id="email" type="text" />
       <label for="city">city</label>
-      <input ngModel name="city" id="city" type="text" />
+      <input required ngModel name="city" id="city" type="text" />
       <label for="phoneNumber">phoneNumber</label>
-      <input ngModel name="phoneNumber" id="phoneNumber" type="text" />
+      <input required ngModel name="phoneNumber" id="phoneNumber" type="text" />
       <label for="birthDay">birthDay</label>
-      <input ngModel name="birthDay" id="birthDay" type="date" />
+      <input required ngModel name="birthDay" id="birthDay" type="date" />
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button
+      [disabled]="newUserForm.invalid"
+      type="submit"
+      class="btn btn-primary"
+    >
+      Login
+    </button>
   </form>
 </div>

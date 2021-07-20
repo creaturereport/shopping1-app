@@ -21,7 +21,7 @@ export class LoginService {
     }  
 
     checkUser(item: string): Observable<any>{
-      return this.http.get<any>(this.products_URL + item + ".json")
+      return this.http.get<any>(this.users_URL + item + ".json")
     }
 
     newUser(userObject: NewUser): Observable<any> {

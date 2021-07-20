@@ -35,13 +35,24 @@ export class LoginComponent implements OnInit {
   logIn(x: any) {
     console.log(x);
     console.log(x.form.value);
+    x.reset
   }
 
   newUser(x: any) {
     console.log(x)
     console.log(x.form.value)
-    /* let newUser: NewUser = new NewUser() 
-    console.log(newUser) */
+    let newUser: NewUser = {
+      firstName: x.form.value.firstName,
+      lastName: x.form.value.lastName,
+      memberID: Math.random(),
+      city: x.form.value.city,
+      loyaltyPoints: 0,
+      birthday: x.form.value.birthDay,
+      phoneNumber: x.form.value.phoneNumber,
+      email: x.form.value.email,
+    }
+    console.log(newUser)
+    x.reset()
   }
 
 }
