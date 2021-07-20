@@ -23,11 +23,11 @@ export class LoginService {
       return this.http.get<any>(this.users_URL + item + ".json")
     }
     
-    checkUsers(): Observable<any>{
+    /* checkUsers(): Observable<any>{
       return this.http.get<any>(this.users_URL + ".json")
-    }
+    } */
 
-    newUser(userObject: NewUser): Observable<any> {
-      return this.http.post<any>(this.users_URL + ".json", userObject)
+    newUser(firstName:string, userObject: NewUser): Observable<any> {
+      return this.http.put<any>(this.users_URL + firstName + ".json", userObject)
     }
 }
