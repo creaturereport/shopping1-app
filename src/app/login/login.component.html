@@ -1,26 +1,34 @@
-<div class="login-form" style="display: flex">
-    <div class="login">
-        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-            <div class="form-group">
-              <label for="userName">LOGIN</label>
-              <input 
-              type="text" 
-              name="userName"
-              class="form-control" 
-              id="inputUsername" 
-              aria-describedby="emailHelp" 
-              placeholder="Enter First Name"
-              ngModel
-              required
-              >
-            </div>
-            <!-- Directive to alert user of invalid username -->
-            <div *ngIf="isValidUser" style="color: red">User does not exist. Please try again.</div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+<div class="formsContainer">
+  <form class="block" (ngSubmit)="logIn(logInForm)" #logInForm="ngForm">
+    <h3>Log In!</h3>
+    <div class="form">
+      <label for="firstName">FirstName</label>
+      <input
+        #model="ngModel"
+        ngModel
+        name="firstName"
+        id="firstName"
+        type="text"
+      />
     </div>
-
-    <div class="signup">
-
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+  <form class="block" (ngSubmit)="newUser(newUserForm)" #newUserForm="ngForm">
+    <h3>Sign Up!</h3>
+    <div class="form">
+      <label for="firstName">FirstName</label>
+      <input ngModel name="firstName" id="firstName" type="text" />
+      <label for="lastName">lastName</label>
+      <input ngModel name="lastName" id="lastName" type="text" />
+      <label for="email">email</label>
+      <input ngModel name="email" id="email" type="text" />
+      <label for="city">city</label>
+      <input ngModel name="city" id="city" type="text" />
+      <label for="phoneNumber">phoneNumber</label>
+      <input ngModel name="phoneNumber" id="phoneNumber" type="text" />
+      <label for="birthDay">birthDay</label>
+      <input ngModel name="birthDay" id="birthDay" type="date" />
     </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
 </div>

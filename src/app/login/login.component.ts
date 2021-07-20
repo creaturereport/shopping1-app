@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { NewUser } from '../classes/new-user';
 
 @Component({
   selector: 'app-login',
@@ -10,24 +11,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  @ViewChild('f')
-    loginForm!: NgForm;
+  /* @ViewChild('f')
+  loginForm!: NgForm; */
 
   constructor(public loginApi: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  isValidUser: boolean = false;
+  invalidUser: boolean = false;
 
-  onSubmit(form: NgForm){
+  /* onSubmit(form: NgForm){
     return this.loginApi.checkUser(form.value.userName).subscribe((data: {}) => {
       if(data === null) {
-        this.isValidUser = true;
+        this.invalidUser = true;
       } else {
           this.router.navigateByUrl('/home');
         };
       }
     )
+  } */
+
+  logIn(x: any) {
+    console.log(x);
+    console.log(x.form.value);
   }
+
+  newUser(x: any) {
+    console.log(x)
+    console.log(x.form.value)
+    /* let newUser: NewUser = new NewUser() 
+    console.log(newUser) */
+  }
+
 }

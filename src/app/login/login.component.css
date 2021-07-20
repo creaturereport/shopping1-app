@@ -1,3 +1,18 @@
-/* align left login-form*/
+.formsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100vw;
+}
 
-/* align right signup */
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0.5rem 0;
+}
+
+.block {
+  display: block;
+  margin: 0 3rem 0 3rem;
+}
