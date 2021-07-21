@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  BASE_URL= "https://console.firebase.google.com/project/users-authentication-70a63/database/users-authentication-70a63-default-rtdb/data"
+  BASE_URL= "https://users-authentication-70a63-default-rtdb.firebaseio.com/"
 
   constructor(private http: HttpClient) { }
 
@@ -20,5 +20,8 @@ export class LoginService {
 
     checkUser(item: string): Observable<any>{
       return this.http.get<any>(this.BASE_URL + item + ".json")
+    }
+    createUser(item: object, location: string ): Observable<any>{
+      return this.http.put<any>(this.BASE_URL + location + ".json", item)
     }
 }

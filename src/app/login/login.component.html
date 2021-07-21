@@ -1,26 +1,139 @@
-<div class="login-form" style="display: flex">
-    <div class="login">
-        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-            <div class="form-group">
-              <label for="userName">LOGIN</label>
-              <input 
-              type="text" 
-              name="userName"
-              class="form-control" 
-              id="inputUsername" 
-              aria-describedby="emailHelp" 
-              placeholder="Enter First Name"
-              ngModel
-              required
-              >
-            </div>
-            <!-- Directive to alert user of invalid username -->
-            <div *ngIf="isValidUser" style="color: red">User does not exist. Please try again.</div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-    </div>
+<div class="login-register-form formHolder">
+  <div>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="login cont">
+      <div class="form-group">
+        <label for="userName">LOGIN</label>
+        <input
+          type="text"
+          name="userName"
+          class="form-control"
+          id="inputUsername"
+          aria-describedby="emailHelp"
+          placeholder="Enter User Name"
+          ngModel
+          required
+        />
+      </div>
+      <!-- Directive to alert user of invalid username -->
+      <div *ngIf="isValidUser" style="color: red">
+        User does not exist. Please try again.
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+<div>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToV8JnpWSzbOdZ5ABMZH6gY2A8kg5FRMsrzw&usqp=CAU"
+  alt="page seperate"
+  height="100%"
+  />
+</div>
+  <div class="signup cont">
+    <form (ngSubmit)="onSignup(signupForm)" #signupForm="ngForm">
+      <div class="form-group">
+        <div class="form-style">
+          <label for="userName">User Name</label>
+          <br />
+          <input
+            ngModel
+            name="userName"
+            #firstName="ngModel"
+            id="userName"
+            type="text"
+            required
+          />
+          <div></div>
+        </div>
 
-    <div class="signup">
+        <div class="form-style">
+          <label for="firstName">First Name</label>
+          <br />
+          <input
+            ngModel
+            name="firstName"
+            #firstName="ngModel"
+            id="firstName"
+            type="text"
+            required
+          />
+          <div></div>
+        </div>
 
-    </div>
+        <div class="form-style">
+          <label for="lastName">Last Name</label>
+          <br />
+          <input
+            ngModel
+            name="lastName"
+            #lastName="ngModel"
+            id="lastName"
+            type="text"
+            required
+          />
+          <div></div>
+        </div>
+
+        <div class="form-style">
+          <label for="email">Email</label>
+          <br />
+          <input
+            ngModel
+            name="email"
+            #email="ngModel"
+            id="email"
+            type="email"
+            required
+          />
+          <div></div>
+        </div>
+
+        <div class="form-style">
+          <label for="phoneNumber">Phone Number</label>
+          <br />
+          <input
+            ngModel
+            name="phoneNumber"
+            #phoneNumber="ngModel"
+            id="phoneNumber"
+            type="tel"
+            required
+          />
+          <div></div>
+        </div>
+
+        <div class="form-style">
+          <label for="city">City</label>
+          <br />
+          <input
+            ngModel
+            name="city"
+            #city="ngModel"
+            id="city"
+            type="text"
+            required
+          />
+          <div></div>
+        </div>
+
+        <div class="form-style">
+          <label for="birthDate">Birth Date</label>
+          <br />
+          <input
+            ngModel
+            name="birthDate"
+            #birthDate="ngModel"
+            id="birthDate"
+            type="date"
+            required
+          />
+          <div></div>
+        </div>
+        <br />
+        <div *ngIf="userExists" style="color: red">
+          User already exist. Try new username.
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
 </div>

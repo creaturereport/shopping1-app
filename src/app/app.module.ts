@@ -13,7 +13,6 @@ import { NavComponent } from './nav/nav.component';
 import { ProductsService } from './services/products.service';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,7 @@ import { RegisterComponent } from './register/register.component';
     WatchesComponent,
     NavComponent,
     LoginComponent,
-    RegisterComponent
+    
   ],
   imports: [
     BrowserModule,
