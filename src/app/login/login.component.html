@@ -27,17 +27,96 @@
     <h3>Sign Up!</h3>
     <div class="form">
       <label for="firstName">FirstName</label>
-      <input required ngModel name="firstName" id="firstName" type="text" />
+      <input
+        required
+        maxlength="15"
+        minlength="3"
+        ngModel
+        name="firstName"
+        #firstName="ngModel"
+        id="firstName"
+        type="text"
+      />
+      <div
+        *ngIf="firstName.touched && !firstName.valid"
+        class="alert alert-danger"
+      >
+        First Names Must Be Between 3 And 15 Characters Long
+      </div>
       <label for="lastName">lastName</label>
-      <input required ngModel name="lastName" id="lastName" type="text" />
+      <input
+        required
+        maxlength="15"
+        minlength="3"
+        ngModel
+        name="lastName"
+        #lastName="ngModel"
+        id="lastName"
+        type="text"
+      />
+      <div
+        *ngIf="lastName.touched && !lastName.valid"
+        class="alert alert-danger"
+      >
+        Last Names Must Be Between 3 And 15 Characters Long
+      </div>
       <label for="email">email</label>
-      <input required ngModel name="email" id="email" type="text" />
+      <input
+        required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        ngModel
+        name="email"
+        #email="ngModel"
+        id="email"
+        type="email"
+      />
+      <div *ngIf="email.touched && !email.valid" class="alert alert-danger">
+        Must Be A Valid Email
+      </div>
       <label for="city">city</label>
-      <input required ngModel name="city" id="city" type="text" />
+      <input
+        required
+        maxlength="15"
+        minlength="3"
+        ngModel
+        name="city"
+        #city="ngModel"
+        id="city"
+        type="text"
+      />
+      <div *ngIf="city.touched && !city.valid" class="alert alert-danger">
+        Must Be Between 3 And 5 Characters Long
+      </div>
       <label for="phoneNumber">phoneNumber</label>
-      <input required ngModel name="phoneNumber" id="phoneNumber" type="text" />
+      <input
+        required
+        ngModel
+        pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"
+        name="phoneNumber"
+        #phoneNumber="ngModel"
+        id="phoneNumber"
+        type="tel"
+      />
+      <div
+        *ngIf="phoneNumber.touched && !phoneNumber.valid"
+        class="alert alert-danger"
+      >
+        Must Be 10 Numbers And A Valid Phone Number
+      </div>
       <label for="birthDay">birthDay</label>
-      <input required ngModel name="birthDay" id="birthDay" type="date" />
+      <input
+        required
+        min="1900-01-01"
+        max="2003-12-31"
+        ngModel
+        name="birthDay"
+        #birthDay="ngModel"
+        id="birthDay"
+        type="date"
+      />
+    </div>
+    <div *ngIf="birthDay.touched && !birthDay.valid" class="alert alert-danger">
+      Please Choose A Valid Date, Must Be 18 Or Older
     </div>
     <button
       [disabled]="newUserForm.invalid"
