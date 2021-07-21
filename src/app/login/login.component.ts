@@ -27,12 +27,12 @@ export class LoginComponent implements OnInit {
     return this.loginApi.checkUser(x.form.value.firstName).subscribe((data: {}) => {
       if(data === null) {
         this.invalidUser = true;
+        x.reset()
       } else {
           this.router.navigateByUrl('/home');
         };
       }
     )
-    x.reset()
   }
 
   newUser(x: NgForm) {
@@ -53,8 +53,9 @@ export class LoginComponent implements OnInit {
     console.log(newUser)
     return this.loginApi.newUser(firstName, newUser).subscribe((data: {})=>{
       console.log(data)
+      x.reset()
+      this.router.navigateByUrl('/home');
     })
-    x.reset()
   }
-
+  
 }
