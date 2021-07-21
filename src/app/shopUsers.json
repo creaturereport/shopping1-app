@@ -1,0 +1,34 @@
+
+    
+{
+    "Rack":{
+      "firstName": "Rack",
+      "lastName": "Jackson",
+      "memberID": 1,
+      "cityLocation": "Inglewood, CA",
+      "loyalityPoints": 1124,
+      "birthday": "June 8, 1991" ,
+      "phoneNumber": "123-456-7890",
+      "emailAddress": "rackjack@msn.com"
+    },
+    "Naomi":{
+      "firstName": "Naomi",
+      "lastName": "Ramone",
+      "memberID": 2,
+      "cityLocation": "Baton Rouge, LA",
+      "loyalityPoints": 955,
+      "birthday": "Novemeber 28, 1996" ,
+      "phoneNumber": "404-456-7890",
+      "emailAddress": "prettylady@gmail.com"
+    },
+    "Miss":{
+      "firstName": "Miss",
+      "lastName": "Fritter",
+      "memberID": 3,
+      "cityLocation": "Thomasville, GA",
+      "loyalityPoints": 3094,
+      "birthday": "May 14, 1982" ,
+      "phoneNumber": "919-456-0987",
+      "emailAddress": "schoolbus_rules@yahoo.com"
+    }
+  }
