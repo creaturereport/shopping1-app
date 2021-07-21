@@ -1,0 +1,6 @@
+.login-box-control {
+    padding: 10px;
+    padding-bottom: 20;
+    flex-direction: row;
+    justify-content: center;
+}

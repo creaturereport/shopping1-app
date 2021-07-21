@@ -14,6 +14,7 @@ import { AccessoriesComponent } from './accessories/accessories.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './login.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
