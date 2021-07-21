@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ShopDataService} from '../shop-data.service';
 
 @Component({
   selector: 'app-hats',
@@ -7,11 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HatsComponent implements OnInit {
 
-  constructor() { }
+  styleHats: any = []
+
+  constructor(public getHatsApi: ShopDataService) { }
 
   ngOnInit(): void {
+    console.log("Hats logged")
+    this.getAllHats();
+
   }
-  styleHats: any = [
+
+  getAllHats() {
+    return this.getHatsApi.getHats().subscribe((data: {}) =>{
+      this.styleHats = data;
+      console.log(this.styleHats);
+    })
+  }
+
+
+
+
+
+
+
+
+/*   styleHats: any = [
     {
       id: 1, 
       name: "GME Baseball Cap",
@@ -37,5 +59,7 @@ export class HatsComponent implements OnInit {
       image_url: "https://images.stockx.com/products/streetwear/Dior-x-Jordan-Wings-Bucket-Hat-Navy.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&dpr=2&trim=color&updated_at=1603481985"
     }
   ]
+  */
 
 }
+ 

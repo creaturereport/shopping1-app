@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShopDataService} from '../shop-data.service';
 
 @Component({
   selector: 'app-pants',
@@ -6,12 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pants.component.css']
 })
 export class PantsComponent implements OnInit {
+  stylePants: any = []
 
-  constructor() { }
+  constructor(public getPantsApi: ShopDataService) { }
 
   ngOnInit(): void {
+    console.log("Pants logged")
+    this.getAllPants();    
   }
-  stylePants: any = [
+
+  getAllPants() {
+    return this.getPantsApi.getPants().subscribe((data: {}) =>{
+      this.stylePants = data;
+      console.log(this.stylePants);
+    })
+  }
+
+
+
+
+
+/*   stylePants: any = [
     {
       id: 1, 
       name: "Blue Jeans",
@@ -37,7 +53,7 @@ export class PantsComponent implements OnInit {
       image_url: "https://us.123rf.com/450wm/krasyuk/krasyuk1111/krasyuk111100057/11178829-man-s-feet-in-black-trousers-and-black-shoes.jpg?ver=6"
     }
   ]
-
+ */
 }
 
 

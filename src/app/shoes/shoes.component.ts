@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShopDataService} from '../shop-data.service';
 
 @Component({
   selector: 'app-shoes',
@@ -7,12 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoesComponent implements OnInit {
 
-  constructor() { }
+  styleShoes: any = []
+
+  constructor(public getShoesApi: ShopDataService) { }
 
   ngOnInit(): void {
+    console.log("Shoes logged")
+    this.getAllShoes();
+
   }
 
-  styleHats: any = [
+
+
+  getAllShoes() {
+    return this.getShoesApi.getShoes().subscribe((data: {}) =>{
+      this.styleShoes = data;
+      console.log(this.styleShoes);
+    })
+  }
+
+
+/*   styleShoes: any = [
     {
       id: 1, 
       name: "Ladies Running Sport Shoes",
@@ -38,6 +54,6 @@ export class ShoesComponent implements OnInit {
       image_url: "https://images-na.ssl-images-amazon.com/images/I/41UacCTmq7S.jpg"
     }
   ]
-
+ */
 
 }

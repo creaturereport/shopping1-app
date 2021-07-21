@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShopDataService} from '../shop-data.service';
 
 @Component({
   selector: 'app-accessories',
@@ -6,13 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accessories.component.css']
 })
 export class AccessoriesComponent implements OnInit {
+  stylesAcc: any = []
 
-  constructor() { }
+  constructor(public getAccessoriesApi: ShopDataService) { }
 
   ngOnInit(): void {
+    console.log("Misc logged")
+    this.getAllAccessories();
   }
 
-  styleAcc: any = [
+
+
+    getAllAccessories() {
+    return this.getAccessoriesApi.getAccessories().subscribe((data: {}) =>{
+      this.stylesAcc = data;
+      console.log(this.stylesAcc);
+    })
+  }
+
+
+
+
+
+
+/*   styleAcc: any = [
     {
       id: 1, 
       name: "Watch",
@@ -38,7 +56,7 @@ export class AccessoriesComponent implements OnInit {
       image_url: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-824,/pub/media/catalog/product/p/f/pf34b01g_2.jpg?rnd=20200526195200"
     }
   ]
-
+ */
 }
 
 

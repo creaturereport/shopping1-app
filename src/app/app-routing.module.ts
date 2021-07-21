@@ -6,16 +6,20 @@ import {HatsComponent} from './hats/hats.component';
 import { ShoesComponent } from './shoes/shoes.component';
 import {PantsComponent} from './pants/pants.component';
 import {AccessoriesComponent} from './accessories/accessories.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  {path: "", redirectTo: "/home", pathMatch: "full"},
+  {path: "login", redirectTo: "/login", pathMatch: "full"},
   {path: "home", component: HomeComponent},
   {path: "shirts", component: ShirtsComponent },
   {path: "hats", component: HatsComponent},
   {path: "shoes", component: ShoesComponent},
   {path: "pants", component: PantsComponent},
-  {path: "accessories", component: AccessoriesComponent}
+  {path: "accessories", component: AccessoriesComponent},
+  {path: "checkout", component: CheckoutComponent},
+  {path: "login", component: LoginComponent}
 ];
 
 @NgModule({
