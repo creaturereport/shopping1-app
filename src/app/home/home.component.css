@@ -1,11 +1,3 @@
-.logoHolder {
-    width: 100%;
-    height: 400px;
-    text-align: center;
-    /* bgc just to see the div params */
-    /* background-color: lightgray; */
-    
-}
 
 .productContainer {
     display: flex;

@@ -18,6 +18,10 @@ export class LoginService {
   }
     checkUser(item: string): Observable<any>{
       return this.http.get<any>(this.Users_URL + item + ".json")
-    }   
+    }
+    
+    createUser(item: object, location: string ): Observable<any> {
+      return this.http.put<any>(this.Users_URL + location + ".json", item)
+    }
 
 }

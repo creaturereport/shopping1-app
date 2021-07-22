@@ -13,12 +13,16 @@ export class LoginComponent implements OnInit {
   @ViewChild('f')
     loginForm!: NgForm;
 
+  @ViewChild('signUpForm')
+    signUpForm!: NgForm;
+
   constructor(public loginApi: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   isValidUser: boolean = false;
+  currentUser: boolean = false;
 
   onSubmit(form: NgForm){
     return this.loginApi.checkUser(form.value.userName).subscribe((data: {}) => {
@@ -27,6 +31,22 @@ export class LoginComponent implements OnInit {
       }
       else { 
         this.router.navigateByUrl('/home');
+      }
+    })
+  }
+
+  onSignup(form: NgForm) {
+    let user = form.value;
+    user.memberID = Math.random();
+    user.loyalityPoints = 0;
+    this.loginApi.checkUser(user.userName).subscribe((data: {}) => {
+      if(data === null) {
+        this.loginApi.createUser(user, user.userName).subscribe((data: {})=> {
+          this.router.navigateByUrl('/home');
+        })
+      }
+      else {
+        this.currentUser = true;
       }
     })
   }
