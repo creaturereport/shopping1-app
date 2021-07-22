@@ -11,8 +11,10 @@ import { NewUser } from '../classes/new-user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  /* @ViewChild('f')
-  loginForm!: NgForm; */
+
+  /* @ViewChild('logInForm')
+
+  @ViewChild('newUserForm') */
 
   constructor(public loginApi: LoginService, private router: Router) { }
 
@@ -20,10 +22,9 @@ export class LoginComponent implements OnInit {
   }
 
   invalidUser: boolean = false;
+  userExists: boolean = false;
 
   logIn(x: NgForm) {
-    console.log(x);
-    console.log(x.form.value.firstName);
     return this.loginApi.checkUser(x.form.value.firstName).subscribe((data: {}) => {
       if(data === null) {
         this.invalidUser = true;
@@ -36,8 +37,6 @@ export class LoginComponent implements OnInit {
   }
 
   newUser(x: NgForm) {
-    console.log(x)
-    console.log(x.form.value)
     let newUser: NewUser = {
       firstName: x.form.value.firstName,
       lastName: x.form.value.lastName,
@@ -49,12 +48,18 @@ export class LoginComponent implements OnInit {
       email: x.form.value.email,
     }
     let firstName = x.form.value.firstName + "/"
-    console.log(firstName)
-    console.log(newUser)
-    return this.loginApi.newUser(firstName, newUser).subscribe((data: {})=>{
-      console.log(data)
-      x.reset()
-      this.router.navigateByUrl('/home');
+    this.loginApi.checkUser(firstName).subscribe((data: {}) => {
+      if (data === null) {
+        this.loginApi.newUser(firstName, newUser).subscribe((data: {})=>{
+          console.log(data)
+          x.reset()
+          this.router.navigateByUrl('/home');
+        })
+      }
+      else {
+        this.userExists = true;
+        x.reset()
+      }
     })
   }
   

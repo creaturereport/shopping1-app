@@ -118,6 +118,9 @@
     <div *ngIf="birthDay.touched && !birthDay.valid" class="alert alert-danger">
       Please Choose A Valid Date, Must Be 18 Or Older
     </div>
+    <div *ngIf="userExists" class="alert alert-danger">
+      User Already Exists, Try A New Name!
+    </div>
     <button
       [disabled]="newUserForm.invalid"
       type="submit"
