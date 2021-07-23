@@ -49,6 +49,8 @@ export class LoginComponent implements OnInit {
 
          this.loginApi.createUser(user,user.userName).subscribe((data: {}) => {
           console.log(data)
+          this.loginApi.setUser(data)
+          console.log(this.loginApi.loggedInUser)
           this.router.navigateByUrl('/home');
         })
       }
