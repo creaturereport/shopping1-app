@@ -1,6 +1,6 @@
 <div class="profilePage">
     <div *ngIf="!isEditing">
-    <div class="profileDisplay">
+    <div class="form">
         <p>user: {{user.userName}}</p>
         <p>first: {{user.firstName}}</p>
         <p>last: {{user.lastName}}</p>
@@ -12,20 +12,30 @@
     </div>
     </div>
     <div *ngIf="isEditing" class="editForm">
-        form will live here
-        <form [formGroup]="profileForm" formGroupName="profileForm">
-            <label for="firtName">First Name</label>
-            <input id="firstName" type="text" formControlName="firstName" placeholder="{{user.firstName}}" />
-            <label for="lastName"></label>
-            <input id="lastName"  type="text" formControlName="lastName" />
-            <label for="city"></label>
-            <input id="city" type="text" formControlName="city" />
-            <label for="email"></label>
-            <input id="email" type="email" formControlName="email" />
-            <label for="phoneNumber"></label>
-            <input id="phoneNumber" type="tel" formControlName="phoneNumber" />
-            <label for="birthDate"></label>
-            <input id="birthDate" type="date" formControlName="birthDate" />
+        <!-- form will live here -->
+        
+        <form class="form" [formGroup]="profileForm" >
+            <!-- <div style="display: block;"> -->
+                <label for="firtName">First Name</label>
+                <input id="firstName" type="text" formControlName="firstName" placeholder="{{user.firstName}}" />
+            <!-- </div> -->
+            <br>
+            <label for="lastName">Last Name</label>
+            <input id="lastName"  type="text" formControlName="lastName" placeholder="{{user.lastName}}" />
+            <br>
+            <label for="city">city</label>
+            <input id="city" type="text" formControlName="city" placeholder="{{user.city}}"/>
+            <br>
+            <label for="email">email</label>
+            <input id="email" type="email" formControlName="email" placeholder="{{user.email}}"/>
+            <br>
+            <label for="phoneNumber">Phone Number</label>
+            <input id="phoneNumber" type="tel" formControlName="phoneNumber" placeholder="{{user.phoneNumber}}"/>
+            <br>
+            <label for="birthDate">Date of Birth</label>
+            <input id="birthDate" type="date" formControlName="birthDate" placeholder="{{user.birthDate}}"/>
+            <br>
         </form>
+    
     </div>
 </div>
