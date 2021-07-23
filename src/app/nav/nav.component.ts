@@ -8,11 +8,12 @@ import { User } from '../classes/user';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
+  loggedInUser = "";
   constructor(public loginApi: LoginService) { }
   ngOnInit(): void {
-   let loggedInUser: User = this.loginApi.loggedInUser;
-   console.log(loggedInUser.userName) 
+
+   this.loggedInUser = this.loginApi.loggedInUser.userName;
+   console.log(this.loggedInUser);
 
   }
 
