@@ -14,7 +14,7 @@
     <div *ngIf="isEditing" class="editForm">
         <!-- form will live here -->
         
-        <form class="form" [formGroup]="profileForm" >
+        <form (ngSubmit)="onSubmit()" class="form" [formGroup]="profileForm" >
             <!-- <div style="display: block;"> -->
                 <label for="firtName">First Name</label>
                 <input id="firstName" type="text" formControlName="firstName" placeholder="{{user.firstName}}" />
@@ -35,6 +35,7 @@
             <label for="birthDate">Date of Birth</label>
             <input id="birthDate" type="date" formControlName="birthDate" placeholder="{{user.birthDate}}"/>
             <br>
+            <button [disabled]="loading" type="submit">Save Changes</button>
         </form>
     
     </div>

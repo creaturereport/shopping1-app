@@ -32,4 +32,10 @@ export class LoginService {
     setUser(item: User){
       this.loggedInUser = item;
     }
+
+    editUser(item: any, apiPath: string): Observable<any>{
+      return this.http.patch<any>(this.BASE_URL + apiPath + ".json", item)
+    }
+
+    
 }

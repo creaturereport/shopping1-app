@@ -47,4 +47,25 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  loading = false //boolean for loading
+  onSubmit() {
+    console.log(this.profileForm)
+    
+    let payload = this.profileForm.value;
+    console.log(payload)
+
+    this.loginApi.editUser(payload, this.loginApi.loggedInUser.userName).subscribe((data: {}) => {
+      console.log(data);
+      this.loginApi.checkUser(this.loginApi.loggedInUser.userName).subscribe((data: User) => {
+        this.loginApi.setUser(data)
+        this.user = this.loginApi.loggedInUser
+        console.log(data);
+        this.loading = true;
+      })
+
+      setTimeout( () => {this.isEditing = false
+                          this.loading = false}, 1000)
+    })
+  }
+
 }
