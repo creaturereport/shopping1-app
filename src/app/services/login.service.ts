@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../classes/user';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 export class LoginService {
   BASE_URL= "https://users-authentication-70a63-default-rtdb.firebaseio.com/"
 
-  loggedInUser = {};
+  loggedInUser = new User;
 
   constructor(private http: HttpClient) { }
 
@@ -28,7 +29,7 @@ export class LoginService {
       return this.http.put<any>(this.BASE_URL + location + ".json", item)
     }
 
-    setUser(item: object){
+    setUser(item: User){
       this.loggedInUser = item;
     }
 }

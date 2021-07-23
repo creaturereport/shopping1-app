@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { User } from '../classes/user';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   userExists: boolean = false;
 
   onSubmit(form: NgForm){
-    return this.loginApi.checkUser(form.value.userName).subscribe((data: {}) => {
+    return this.loginApi.checkUser(form.value.userName).subscribe((data: User) => {
       if(data === null) {
         this.isValidUser = true;
       } else {
@@ -47,7 +48,7 @@ export class LoginComponent implements OnInit {
     this.loginApi.checkUser(user.userName).subscribe((data: {}) =>{
       if(data === null) {
 
-         this.loginApi.createUser(user,user.userName).subscribe((data: {}) => {
+         this.loginApi.createUser(user,user.userName).subscribe((data: User) => {
           console.log(data)
           this.loginApi.setUser(data)
           console.log(this.loginApi.loggedInUser)

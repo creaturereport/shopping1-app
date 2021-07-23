@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
+import { User } from '../classes/user';
 
 @Component({
   selector: 'app-nav',
@@ -10,8 +11,8 @@ export class NavComponent implements OnInit {
 
   constructor(public loginApi: LoginService) { }
   ngOnInit(): void {
-   let loggedInUser = this.loginApi.loggedInUser;
-   console.log(loggedInUser) 
+   let loggedInUser: User = this.loginApi.loggedInUser;
+   console.log(loggedInUser.userName) 
 
   }
 
