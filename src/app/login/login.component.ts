@@ -26,10 +26,13 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form: NgForm){
     return this.loginApi.checkUser(form.value.userName).subscribe((data: {}) => {
+      console.log(data);
       if(data === null) {
         this.isValidUser = true;
       }
       else { 
+        this.loginApi.setUser(data)
+        console.log(this.loginApi.loggedInUser)
         this.router.navigateByUrl('/home');
       }
     })
@@ -37,6 +40,7 @@ export class LoginComponent implements OnInit {
 
   onSignup(form: NgForm) {
     let user = form.value;
+    console.log(form.value);
     user.memberID = Math.random();
     user.loyalityPoints = 0;
     this.loginApi.checkUser(user.userName).subscribe((data: {}) => {

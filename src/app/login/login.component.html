@@ -34,34 +34,117 @@
                     <input type="text" id="inputUsername" class="form-control" placeholder="Your User Name *" value="username" name="userName" ngModel required/>
                 </div>
                 <div class="form-group">
+                          <!-- Directive to alert user of invalid username -->
+                    <div *ngIf="isValidUser" style="color: red">
+                        User does not exist. Please try again.
+                    </div>
+
                     <input type="submit" class="btnSubmit" value="Login" />
                 </div>
             </form>
         </div>
         <div class="col-md-6 login-form-2">
             <h3>Signup</h3>
-            <form>
+            <form (ngSubmit)="onSignup(signupForm)" #signupForm="ngForm" >
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Username *" value="" ngModel required/>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Username *"
+                    value="" 
+                    #userName="ngModel" 
+                    name="userName" 
+                    ngModel 
+                    required
+                    />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="First Name *" value="" ngModel required />
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="First Name *" 
+                    value="" 
+                    #firstName="ngModel" 
+                    name="firstName" 
+                    id="firstName" 
+                    ngModel 
+                    required 
+                    />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Last Name *" value="" ngModel required />
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Last Name *" 
+                    value="" 
+                    #lastName="ngModel" 
+                    name="lastName" 
+                    id="lastName" 
+                    ngModel 
+                    required 
+                    />
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email Address *" value="" ngModel required />
+                    <input 
+                    type="email" 
+                    class="form-control" 
+                    placeholder="Email Address *" 
+                    value=""  
+                    id="email" 
+                    name="email"  
+                    #email="ngModel" 
+                    ngModel 
+                    required 
+                    />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="City *" value="" ngModel required />
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="City *" 
+                    value="" 
+                    name="city"
+                    id="city" 
+                    #email="ngModel"
+                    ngModel 
+                    required
+                    />
                 </div>
                 <div class="form-group">
-                    <input type="date" class="form-control" placeholder="Birth Date *" value="" ngModel required />
+                    <input 
+                    type="tel" 
+                    class="form-control" 
+                    placeholder="phone number *" 
+                    value=""
+                    name="phoneNumber"
+                    #phoneNumber ="ngModel"
+                    id="phoneNumber" 
+                    ngModel 
+                    required 
+                    />
+                </div>
+
+                <div class="form-group">
+                    <input 
+                    type="date" 
+                    class="form-control" 
+                    placeholder="Birth Date *" 
+                    value=""
+                    name="birthDate"
+                    #birthDate="ngModel"
+                    id="birthDate" 
+                    ngModel 
+                    required 
+                    />
                 </div>
 
 
+
                 <div class="form-group">
+                    <div *ngIf="currentUser" style="color: red">
+                        User already exist. Try new username.
+                      </div>
+              
                     <input type="submit" class="btnSubmit" value="Register" />
                 </div>
             </form>

@@ -1,7 +1,7 @@
 
     
 {
-    "Rack":{
+    "Rjackson":{
       "firstName": "Rack",
       "lastName": "Jackson",
       "memberID": 1,
@@ -9,9 +9,10 @@
       "loyalityPoints": 1124,
       "birthday": "June 8, 1991" ,
       "phoneNumber": "123-456-7890",
-      "emailAddress": "rackjack@msn.com"
+      "emailAddress": "rackjack@msn.com",
+      "userName": "Rjackson"
     },
-    "Naomi":{
+    "Nramone":{
       "firstName": "Naomi",
       "lastName": "Ramone",
       "memberID": 2,
@@ -19,9 +20,10 @@
       "loyalityPoints": 955,
       "birthday": "Novemeber 28, 1996" ,
       "phoneNumber": "404-456-7890",
-      "emailAddress": "prettylady@gmail.com"
+      "emailAddress": "prettylady@gmail.com",
+      "userName": "Nramone"
     },
-    "Miss":{
+    "Mfritter":{
       "firstName": "Miss",
       "lastName": "Fritter",
       "memberID": 3,
@@ -29,6 +31,7 @@
       "loyalityPoints": 3094,
       "birthday": "May 14, 1982" ,
       "phoneNumber": "919-456-0987",
-      "emailAddress": "schoolbus_rules@yahoo.com"
+      "emailAddress": "schoolbus_rules@yahoo.com",
+      "userName": "Mfritter"
     }
   }
