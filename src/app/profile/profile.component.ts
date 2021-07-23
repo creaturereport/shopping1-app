@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../classes/user';
 import { LoginService } from '../services/login.service';
 import { FormBuilder } from '@angular/forms';
+import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-profile',
