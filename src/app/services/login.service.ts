@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class LoginService {
   BASE_URL= "https://users-authentication-70a63-default-rtdb.firebaseio.com/"
 
+  loggedInUser = {};
+
   constructor(private http: HttpClient) { }
 
    // Http Options
@@ -20,8 +22,13 @@ export class LoginService {
 
     checkUser(item: string): Observable<any>{
       return this.http.get<any>(this.BASE_URL + item + ".json")
+      
     }
     createUser(item: object, location: string ): Observable<any>{
       return this.http.put<any>(this.BASE_URL + location + ".json", item)
+    }
+
+    setUser(item: object){
+      this.loggedInUser = item;
     }
 }

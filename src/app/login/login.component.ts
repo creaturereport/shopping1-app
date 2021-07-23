@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
       if(data === null) {
         this.isValidUser = true;
       } else {
+          this.loginApi.setUser(data)
+          console.log(this.loginApi.loggedInUser)
           this.router.navigateByUrl('/home');
         };
       }
