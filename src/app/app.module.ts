@@ -12,8 +12,9 @@ import { WatchesComponent } from './watches/watches.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductsService } from './services/products.service';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]

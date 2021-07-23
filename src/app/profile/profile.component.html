@@ -1,4 +1,5 @@
 <div class="profilePage">
+    <div *ngIf="!isEditing">
     <div class="profileDisplay">
         <p>user: {{user.userName}}</p>
         <p>first: {{user.firstName}}</p>
@@ -9,5 +10,22 @@
         <p>DOB: {{user.birthDate}}</p>
         <button (click)="onEdit()">Edit Profile</button>
     </div>
-    <div *ngIf="isEditing" class="editForm">This should only be seen when editing</div>
+    </div>
+    <div *ngIf="isEditing" class="editForm">
+        form will live here
+        <form [formGroup]="profileForm" formGroupName="profileForm">
+            <label for="firtName">First Name</label>
+            <input id="firstName" type="text" formControlName="firstName" placeholder="{{user.firstName}}" />
+            <label for="lastName"></label>
+            <input id="lastName"  type="text" formControlName="lastName" />
+            <label for="city"></label>
+            <input id="city" type="text" formControlName="city" />
+            <label for="email"></label>
+            <input id="email" type="email" formControlName="email" />
+            <label for="phoneNumber"></label>
+            <input id="phoneNumber" type="tel" formControlName="phoneNumber" />
+            <label for="birthDate"></label>
+            <input id="birthDate" type="date" formControlName="birthDate" />
+        </form>
+    </div>
 </div>
