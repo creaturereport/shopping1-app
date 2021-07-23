@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
+import { User } from '../user'
 
 
 @Component({
@@ -25,14 +26,14 @@ export class LoginComponent implements OnInit {
   currentUser: boolean = false;
 
   onSubmit(form: NgForm){
-    return this.loginApi.checkUser(form.value.userName).subscribe((data: {}) => {
+    return this.loginApi.checkUser(form.value.userName).subscribe((data: User) => {
       console.log(data);
       if(data === null) {
         this.isValidUser = true;
-      }
-      else { 
         this.loginApi.setUser(data)
         console.log(this.loginApi.loggedInUser)
+      }
+      else { 
         this.router.navigateByUrl('/home');
       }
     })
@@ -45,7 +46,8 @@ export class LoginComponent implements OnInit {
     user.loyalityPoints = 0;
     this.loginApi.checkUser(user.userName).subscribe((data: {}) => {
       if(data === null) {
-        this.loginApi.createUser(user, user.userName).subscribe((data: {})=> {
+        this.loginApi.createUser(user, user.userName).subscribe((data: User)=> {
+          this.loginApi.setUser(data)
           this.router.navigateByUrl('/home');
         })
       }
