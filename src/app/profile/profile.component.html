@@ -1,1 +1,13 @@
-<p>{{user | json}}</p>
+<div class="profilePage">
+    <div class="profileDisplay">
+        <p>user: {{user.userName}}</p>
+        <p>first: {{user.firstName}}</p>
+        <p>last: {{user.lastName}}</p>
+        <p>city: {{user.city}}</p>
+        <p>email: {{user.email}}</p>
+        <p>phone: {{user.phoneNumber}}</p>
+        <p>DOB: {{user.birthDate}}</p>
+        <button (click)="onEdit()">Edit Profile</button>
+    </div>
+    <div *ngIf="isEditing" class="editForm">This should only be seen when editing</div>
+</div>
