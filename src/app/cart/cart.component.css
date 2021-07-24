@@ -1,0 +1,44 @@
+.items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+li {
+  list-style: none;
+}
+
+.cartItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 26rem;
+  margin: 1rem 0 0 0;
+  font-weight: 500;
+}
+
+.lineItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  margin: 1rem 0 0 0;
+}
+
+.seperator {
+  height: 0.5vh;
+  width: 100vw;
+  color: black;
+  background-color: black;
+  margin: 1rem 0 1rem 0;
+}
+
+.confirm {
+}
