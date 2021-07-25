@@ -14,6 +14,7 @@ import { ProductsService } from './services/products.service';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ProfileComponent } from './profile/profile.component';
     NavComponent,
     LoginComponent,
     ProfileComponent,
+    CheckoutComponent,
     
   ],
   imports: [
