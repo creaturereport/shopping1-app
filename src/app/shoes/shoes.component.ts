@@ -32,10 +32,8 @@ export class ShoesComponent implements OnInit {
     let selectedShoe = this.shoeStyles.filter((shoe: any) => {
       return shoe.id === id;
     })
-    console.log(selectedShoe)
-    this.cartApi.cartItems.push(selectedShoe[0].name);
-    this.cartApi.cartPrices.push(selectedShoe[0].price);
-    console.log(this.cartApi.cartItems, this.cartApi.cartPrices);
+    this.cartApi.cart.push(selectedShoe[0])
+    
   }
 
 }
