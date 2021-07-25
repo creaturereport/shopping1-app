@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { User } from '../classes/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -9,12 +10,16 @@ import { User } from '../classes/user';
 })
 export class NavComponent implements OnInit {
   loggedInUser = "";
-  constructor(public loginApi: LoginService) { }
+  constructor(public loginApi: LoginService, private router: Router) { }
   ngOnInit(): void {
 
    this.loggedInUser = this.loginApi.loggedInUser.userName;
    console.log(this.loggedInUser);
 
+  }
+
+  onIconClick(){
+    this.router.navigateByUrl('/home');
   }
 
 }

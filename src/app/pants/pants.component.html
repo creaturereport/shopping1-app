@@ -1,5 +1,8 @@
 <app-nav></app-nav>
 <!-- Display options for pants -->
+<div [@animationOption2]="adding ? 'open' : 'close'">
+    <header class="header" style="color: blue">Added to Cart!</header>
+</div>
 <div class="pantsContainer"> 
     <div *ngFor="let pant of pantStyles">
         

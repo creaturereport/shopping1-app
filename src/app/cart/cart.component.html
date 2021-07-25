@@ -1,5 +1,5 @@
 <app-nav></app-nav>
-<h1>Shopping Cart</h1>
+<h1>{{loggedInUser}}'s Shopping Cart</h1>
 <div class="cart">
     <div *ngFor="let item of cartArr">
         <div class="cardStyle">
@@ -18,4 +18,4 @@
     </div>
 </div>
 <h3>Cart Total: ${{cartTotal}}</h3>
-<button type="submit" class="btn btn-primary">Checkout</button>
+<button type="submit" class="btn btn-primary" >Checkout</button>

@@ -3,7 +3,7 @@
     height: fit-content;
     text-align: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 10px;
     flex-flow: row wrap;
 }
@@ -16,4 +16,14 @@
 .btn:hover{
   background-color: white;
   color: blue;
+}
+
+
+
+.btn{
+  display: flex;
+  justify-content: center;
+  margin: 1px;
+  border: medium;
+  padding: 10px;
 }

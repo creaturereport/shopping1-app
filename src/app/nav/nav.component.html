@@ -1,4 +1,4 @@
-<div class="nav-container">
+<div class="navbar navbar-light" style="background-color: #e3f2fd;">
     <!--div class="nav-img">
         <img
         src="../../assets/4u2nv.png" />
@@ -6,7 +6,11 @@
     <ul class="nav nav-pills justify-content-end">
         <div class="nav-img">
         <img
-        src="../../assets/4u2nv.png" />
+        class="nav-img"
+        src="../../assets/4.PNG"
+        width="35px"
+        height="36px"
+        (click)="onIconClick()" />
         </div>
         <li class="nav-item">
             <p class="nav-link" routerLink="/profile">Welcome {{loggedInUser}}</p>

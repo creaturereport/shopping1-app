@@ -1,5 +1,8 @@
 <app-nav></app-nav>
 <!-- Display options for hats -->
+<div [@animationOption2]="adding ? 'open' : 'close'">
+    <header class="header" style="color: blue">Added to Cart!</header>
+</div>
 <div class="hatsContainer"> 
     <div *ngFor="let hat of hatStyles">
         
@@ -13,10 +16,9 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ hat.name }}</h5>
                   <p class="card-text">${{ hat.price }}</p>
-                  <button type="submit" class="btn btn-primary" (click)="addToCart(hat.id)">Add to Cart</button>
+                  <button class="btn btn-primary" (click)="addToCart(hat.id)">Add to Cart</button>
                 </div>
               </div>
         </div>
-    
     </div>
 </div>
