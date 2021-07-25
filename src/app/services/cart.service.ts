@@ -1,29 +1,47 @@
 import { Injectable } from '@angular/core';
+import { Cart } from '../classes/cart';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  cart: any;
-  subTotal: any;
+  cart: Cart[];
 
-  constructor() { 
-    this.cart = {}
+  constructor() {
+    this.cart=[]
   }
 
-  addItem(item: any, property: any) {
-    this.cart = {[item]: property}
+  addItem(item: Cart) {
+    if (this.cart.length === 0) {
+      this.cart.push(item)
+      console.log(this.cart, "empty cart, item added")
+    }
+    else {
+      for (let index of this.cart) {
+        console.log(index)
+        if (item.name === index.name) {
+          console.log(index, "copy found")
+        }
+        else {
+          this.cart.push(item)
+          console.log(this.cart, "item added")
+        }
+      }
+    }
+    console.log(this.cart, "test")
   }
 
-  removeItem(item: any) {
-    delete this.cart[item]
+  removeItem() {
+    
   }
 
   getTotal() {
-    for (let [key, value] of Object.entries(this.cart)) {
-      console.log(key, value)
+    let total: number = 0
+    for (let index of this.cart) {
+      total += index.price
     }
+    console.log(total)
   }
 
 }
