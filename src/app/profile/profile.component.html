@@ -10,6 +10,24 @@
 
  -->
 
-<div>
+
+    <div class="profilePage">
+        <div *ngif="!isEditing">
+            <div class="form">
+                <p>user: {{user.userName}}</p>
+                <p>first: {{user.firstName}}</p>
+                <p>last: {{user.lastName}}</p>
+                <p>city: {{user.city}}</p>
+                <p>email: {{user.email}}</p>
+                <p>phone: {{user.phoneNumber}}</p>
+                <p>DOB: {{user.birthDate}}</p>
+                <button (click)="onEdit()">Edit Profile</button>
+            </div>
+        </div>
+        <div ngif="isEditing">
+
+
+
+        </div>
+    </div>
     
-</div>
