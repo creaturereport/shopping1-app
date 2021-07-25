@@ -12,11 +12,11 @@
         <a class="nav-item nav-link" [routerLink]="'/shoes'">Shoes</a>
         <a class="nav-item nav-link" [routerLink]="'/pants'">Pants</a>
         <a class="nav-item nav-link" [routerLink]="'/accessories'">Accessories</a>
+        <a class="nav-item nav-link"> Welcome {{loggedInUser}}</a>
         
       </div>
     </div>
     <nav class="navbar navbar-light bg-light">
-      <li>Welcome</li>
       <i class="fas fa-users profile-img" [routerLink]="'/profile'"></i>
       <i class="fas fa-shopping-cart shopping-cart-img"></i>
       <form class="form-inline">

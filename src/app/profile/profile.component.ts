@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
 
 
   constructor(public loginApi: LoginService) { }
-
+/*   user: User = new User */
   ngOnInit(): void {
     
   }

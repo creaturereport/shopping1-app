@@ -10,6 +10,7 @@ import { User } from './user';
 export class AppComponent {
 /*   title = 'shopping1-app';
  */
+  loggedInUser = "";
   constructor(public loginApi: LoginService) {}
   
   ngOnInit(): void {
