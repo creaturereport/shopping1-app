@@ -10,8 +10,7 @@ import { ProductsService } from '../services/products.service';
 })
 export class ShoesComponent implements OnInit {
 
-  @Input('ngModel')
-    shoeID!: NgModel
+
 
   shoeStyles: any = [];
 
@@ -28,12 +27,12 @@ export class ShoesComponent implements OnInit {
     })
   }
 
-  addToCart(id: any){
-    let selectedShoe = this.shoeStyles.filter((shoe: any) => {
-      return shoe.id === id;
+  addToCart(id:any){
+    let selectedItem = this.shoeStyles.filter((item: any) => {
+      return item.id === id
     })
-    this.cartApi.cart.push(selectedShoe[0])
-    
+    console.log(selectedItem)
+    this.cartApi.cart.push(selectedItem[0]);
   }
 
 }
