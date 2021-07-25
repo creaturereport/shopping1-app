@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../services/cart.service';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ProductsService } from '../services/products.service';
 export class WatchesComponent implements OnInit {
   watchStyles: any = [];
 
-  constructor(public getWatchesApi: ProductsService) { }
+  constructor(public getWatchesApi: ProductsService, public cartApi: CartService) { }
 
   ngOnInit(): void {
     this.getAllWatches();
@@ -19,6 +20,14 @@ export class WatchesComponent implements OnInit {
     return this.getWatchesApi.getWatches().subscribe((data: {}) =>{
       this.watchStyles = data;
     })
+  }
+
+  addToCart(id:any){
+    let selectedItem = this.watchStyles.filter((item: any) => {
+      return item.id === id
+    })
+    console.log(selectedItem)
+    this.cartApi.cart.push(selectedItem[0]);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../services/cart.service';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ProductsService } from '../services/products.service';
 export class PantsComponent implements OnInit {
   pantStyles: any = [];
 
-  constructor(public getPantsApi: ProductsService) { }
+  constructor(public getPantsApi: ProductsService, public cartApi: CartService) { }
 
   ngOnInit(): void {
     console.log('on pants comp')
@@ -23,6 +24,13 @@ export class PantsComponent implements OnInit {
     })
   }
 
+  addToCart(id:any){
+    let selectedItem = this.pantStyles.filter((item: any) => {
+      return item.id === id
+    })
+    console.log(selectedItem)
+    this.cartApi.cart.push(selectedItem[0]);
+  }
   
 
 }
