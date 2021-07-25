@@ -1,3 +1,20 @@
+<app-nav></app-nav>
+<h1>Shopping Cart</h1>
 <div class="cart">
-    cart works
+    <div *ngFor="let item of cartArr">
+        <div class="cardStyle">
+            <div class="card" style="width: 18rem;">
+                <img src={{item.image_url}} 
+                    class="card-img-top"
+                    width="290px"
+                    height="300px" 
+                    alt="cartItem">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.name }}</h5>
+                  <p class="card-text">${{ item.price }}</p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <h3>Cart Total: ${{cartTotal}}</h3>
 </div>

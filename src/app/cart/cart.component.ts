@@ -9,6 +9,8 @@ import { CartService } from '../services/cart.service';
 export class CartComponent implements OnInit {
 
   cartArr: any = []
+  cartTotal: number = 0;
+
 
 
   constructor(public cartApi: CartService) { }
@@ -16,6 +18,8 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.getCartContents();
     console.log(this.cartArr)
+    this.getTotalPrice();
+    console.log(this.cartTotal)
     
   }
 
@@ -23,4 +27,11 @@ export class CartComponent implements OnInit {
     this.cartArr = this.cartApi.cart
   }
 
+  getTotalPrice(){
+    
+    this.cartArr.forEach((element: any) => {
+     this.cartTotal += parseFloat(element.price)
+   });
+   
+  }
 }
