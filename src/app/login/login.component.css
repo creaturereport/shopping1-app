@@ -1,0 +1,27 @@
+
+.login-register-form{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:90vh;
+    width:100vw;
+}
+.formHolder{
+    display:flex;
+    text-align:center;
+    justify-content:space-around;
+}
+/* align left login-form*/
+.cont{
+    display:block;
+    
+    margin:0 0 0.5rem 0;
+}
+.form-style{
+    display:block;
+    margin:0 3rem 0 3rem;
+}
+
+
+
+/* align right signup */

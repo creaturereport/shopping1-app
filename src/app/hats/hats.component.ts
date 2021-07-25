@@ -14,6 +14,7 @@ export class HatsComponent implements OnInit {
   ngOnInit(): void {
     this.getProducts();
   }
+  
 
   getProducts(){
     return this.getProductsApi.getProducts("Hats").subscribe((data: {}) =>{
