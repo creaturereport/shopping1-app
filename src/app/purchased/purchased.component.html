@@ -1,0 +1,35 @@
+<div class="main">
+  <h2>Thank You for Your Purchase {{ this.LogIn.loggedInUser.userName }}!</h2>
+  <p>
+    An receipt has been emailed to you at {{ this.LogIn.loggedInUser.email }}
+  </p>
+  <p>
+    Below is a summary of your purchases, you will automatically be redirected
+    towards the Home Page in 15 seconds
+  </p>
+  <br />
+</div>
+<!---->
+<div *ngFor="let item of this.cart.cart" class="summary">
+  <p>
+    {{ item.quantity }} {{ item.name }} at {{ item.price | currency }} each, for
+    a total of:
+    {{ +item.price * item.quantity | currency }}
+  </p>
+  <br />
+</div>
+<!---->
+<div class="checkout">
+  <div class="subTotal lineItem">
+    <h5>Sub-Total...</h5>
+    <p>{{ this.cart.getSubTotal() | currency }}</p>
+  </div>
+  <div class="taxes lineItem">
+    <h5>Taxes...</h5>
+    <p>{{ this.cart.getTax() | currency }}</p>
+  </div>
+  <div class="total lineItem">
+    <h5>Total...</h5>
+    <p>{{ this.cart.getTotal() | currency }}</p>
+  </div>
+</div>
