@@ -1,16 +1,27 @@
-<app-nav></app-nav>
-<div class="items" style="height: 90vh">
+<div *ngIf="itemsInCart()" class="items" style="height: 90vh">
+  <app-nav></app-nav>
   <h3>In Your Cart</h3>
-  <ul>
-    <!-- *ngFor="let item of cartItems" -->
-    <div class="cartItems">
-      <li></li>
-      <!-- this is just an example and exact could change -->
-      <button class="btn btn-success" (click)="onAdd()">Add</button>
-      <button class="btn btn-warning" (click)="onRemove()">Remove</button>
-      <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+  <div *ngFor="let item of this.cart.cart" class="cartItems">
+    <!-- ------- -->
+    <div class="leftSide">
+      <p>
+        {{ item.quantity }} {{ item.name }} at {{ item.price | currency }} each
+      </p>
     </div>
-  </ul>
+
+    <div class="rightSide">
+      <button class="btn btn-success" (click)="onAdd(item.name, item.price)">
+        Add
+      </button>
+      <button class="btn btn-warning" (click)="onRemove(item.name, item.price)">
+        Remove
+      </button>
+      <button class="btn btn-danger" (click)="onDelete(item.name, item.price)">
+        Delete
+      </button>
+    </div>
+    <!-- ------- -->
+  </div>
 
   <div class="seperator"></div>
 
@@ -30,5 +41,19 @@
     <button (click)="confirm()" class="confirm btn btn-primary">
       Check Out
     </button>
+    <button (click)="this.cart.getTotal()">test</button>
   </div>
+</div>
+
+<div *ngIf="!itemsInCart()" class="msg">
+  <h2>Whoops!</h2>
+  <p>
+    It looks like you don't have any items in your cart!? Head back to the home
+    page!
+  </p>
+  <p>
+    You can come back here and check out once you've added items to your
+    shopping cart
+  </p>
+  <a class="btn btn-primary" routerLink="/home">Home</a>
 </div>

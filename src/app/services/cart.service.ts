@@ -51,8 +51,12 @@ export class CartService {
 
   deleteItem(item: Cart) {}
 
-  getTotal() {}
+  getTotal() {
+    let total: number= 0;
+  }
 
-  getCartCount() {}
+  getCartCount() {
+    return this.cart.length
+  }
 
 }

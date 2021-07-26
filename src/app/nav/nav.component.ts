@@ -13,10 +13,7 @@ export class NavComponent implements OnInit {
   loggedInUser = "";
   constructor(public loginApi: LoginService, public cart: CartService) { }
   ngOnInit(): void {
-
    this.loggedInUser = this.loginApi.loggedInUser.userName;
-   console.log(this.loggedInUser);
-
   }
 
   uniqueItemCount() {
