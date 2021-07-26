@@ -14,7 +14,10 @@ export class PurchasedComponent implements OnInit {
   constructor(public cart: CartService, public LogIn: LoginService, private router: Router) { }
 
   ngOnInit(): void {
-    setTimeout(()=>{this.router.navigateByUrl("/home")},15000)
+    setTimeout(()=>{
+      this.router.navigateByUrl("/home");
+      this.cart.cart = []
+    },15000)
   }
 
 }
