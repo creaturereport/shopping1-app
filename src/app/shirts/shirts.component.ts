@@ -1,6 +1,8 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
+import { Cart } from '../classes/cart';
+import { CartService } from '../services/cart.service';
 
 
 @Component({
@@ -11,7 +13,7 @@ import { ProductsService } from '../services/products.service';
 export class ShirtsComponent implements OnInit {
  styleShirts: any = []
 
-  constructor(public getShirtsApi: ProductsService) { }
+  constructor(public getShirtsApi: ProductsService, public cart: CartService) { }
 
   ngOnInit(): void {
     console.log("On Shirts Comp")
@@ -25,6 +27,40 @@ export class ShirtsComponent implements OnInit {
     })
   }
  
+  inCartCheck(name: string) {
+    for (let i = 0; i < this.cart.cart.length; i++) {
+      if (name === this.cart.cart[i].name) {
+        return true
+      }
+    }
+    return false
+  }
 
+  quantity(name: string) {
+    for (let i = 0; i < this.cart.cart.length; i++) {
+      if (name === this.cart.cart[i].name) {
+        return this.cart.cart[i].quantity
+      }
+    }
+    return 0
+  }
+
+  addItem(price: number, name: string) {
+    let item: Cart = {
+      price: price,
+      name: name,
+      quantity: 1
+    }
+    this.cart.addItem(item)
+  }
+
+  removeItem(name: string, price: number) {
+    let item: Cart = {
+      price: price,
+      name: name,
+      quantity: 1
+    }
+    this.cart.removeItem(item)
+  }
   
 }
