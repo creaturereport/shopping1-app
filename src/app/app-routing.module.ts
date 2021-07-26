@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ShirtsComponent } from './shirts/shirts.component';
 import { ShoesComponent } from './shoes/shoes.component';
 import { WatchesComponent } from './watches/watches.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/login", pathMatch: "full"},
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: "pants", component: PantsComponent },
   { path: "watches", component: WatchesComponent },
   { path: "login", component: LoginComponent },
-  { path: "profile", component: ProfileComponent}
+  { path: "profile", component: ProfileComponent},
+  { path: "cart", component: CartComponent},
 ];
 
 @NgModule({

@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { CartService } from "./services/cart.service";
+import { CartComponent } from './cart/cart.component'; 
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { CartService } from "./services/cart.service";
     NavComponent,
     LoginComponent,
     ProfileComponent,
+    CartComponent,
     
   ],
   imports: [
