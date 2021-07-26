@@ -1,22 +1,43 @@
 <app-nav></app-nav>
-<!-- Display options for shirts -->
-<div class="shirtsContainer"> 
-    <div *ngFor="let shirt of styleShirts">
-        
-        <div class="cardStyle">
-            <div class="card" style="width: 18rem;">
-                <img src={{shirt.image_url}} 
-                    class="card-img-top"
-                    width="290px"
-                    height="300px" 
-                    alt="shirts">
-                <div class="card-body">
-                  <h5 class="card-title">{{ shirt.name }}</h5>
-                  <p class="card-text">${{ shirt.price }}</p>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                </div>
-              </div>
+<!-- Display options for shirt -->
+<div class="shirtsContainer">
+  <div *ngFor="let shirt of styleShirts">
+    <div class="cardStyle">
+      <div class="card" style="width: 18rem">
+        <img
+          src="{{ shirt.image_url }}"
+          class="card-img-top"
+          width="290px"
+          height="300px"
+          alt="shirt"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ shirt.name }}</h5>
+          <p class="card-text">${{ shirt.price }}</p>
+          <p class="card-text">{{ quantity(shirt.name) }} in cart</p>
+          <button
+            *ngIf="!inCartCheck(shirt.name)"
+            (click)="addItem(shirt.price, shirt.name)"
+            class="btn btn-primary"
+          >
+            Add To Cart
+          </button>
+          <div *ngIf="inCartCheck(shirt.name)">
+            <button
+              class="btn btn-success"
+              (click)="addItem(shirt.price, shirt.name)"
+            >
+              Add 1
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="removeItem(shirt.name, shirt.price)"
+            >
+              Remove 1
+            </button>
+          </div>
         </div>
-    
+      </div>
     </div>
+  </div>
 </div>

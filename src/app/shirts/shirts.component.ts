@@ -1,4 +1,3 @@
-import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Cart } from '../classes/cart';
