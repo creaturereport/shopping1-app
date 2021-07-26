@@ -1,58 +1,70 @@
-<div *ngIf="itemsInCart()" class="items" style="height: 90vh">
-  <app-nav></app-nav>
-  <h3>In Your Cart</h3>
-  <div *ngFor="let item of this.cart.cart" class="cartItems">
-    <!-- ------- -->
-    <div class="leftSide">
-      <p>
-        {{ item.quantity }} {{ item.name }} at {{ item.price | currency }} each
-      </p>
+<div *ngIf="this.logIn.loggedIn">
+  <div *ngIf="itemsInCart()" class="items" style="height: 90vh">
+    <app-nav></app-nav>
+    <h3>In Your Cart</h3>
+    <div *ngFor="let item of this.cart.cart" class="cartItems">
+      <!-- ------- -->
+      <div class="leftSide">
+        <p>
+          {{ item.quantity }} {{ item.name }} at
+          {{ item.price | currency }} each
+        </p>
+      </div>
+
+      <div class="rightSide">
+        <button class="btn btn-success" (click)="onAdd(item.name, item.price)">
+          Add
+        </button>
+        <button
+          class="btn btn-warning"
+          (click)="onRemove(item.name, item.price)"
+        >
+          Remove
+        </button>
+        <button
+          class="btn btn-danger"
+          (click)="onDelete(item.name, item.price)"
+        >
+          Delete
+        </button>
+      </div>
+      <!-- ------- -->
     </div>
 
-    <div class="rightSide">
-      <button class="btn btn-success" (click)="onAdd(item.name, item.price)">
-        Add
-      </button>
-      <button class="btn btn-warning" (click)="onRemove(item.name, item.price)">
-        Remove
-      </button>
-      <button class="btn btn-danger" (click)="onDelete(item.name, item.price)">
-        Delete
-      </button>
+    <div class="seperator"></div>
+
+    <div class="checkout">
+      <div class="subTotal lineItem">
+        <h5>Sub-Total...</h5>
+        <p>{{ this.cart.getSubTotal() | currency }}</p>
+      </div>
+      <div class="taxes lineItem">
+        <h5>Taxes...</h5>
+        <p>{{ this.cart.getTax() | currency }}</p>
+      </div>
+      <div class="total lineItem">
+        <h5>Total...</h5>
+        <p>{{ this.cart.getTotal() | currency }}</p>
+      </div>
+      <a class="confirm btn btn-primary" routerLink="/thanks"> Check Out </a>
     </div>
-    <!-- ------- -->
   </div>
 
-  <div class="seperator"></div>
-
-  <div class="checkout">
-    <div class="subTotal lineItem">
-      <h5>Sub-Total...</h5>
-      <p>{{ this.cart.getSubTotal() | currency }}</p>
-    </div>
-    <div class="taxes lineItem">
-      <h5>Taxes...</h5>
-      <p>{{ this.cart.getTax() | currency }}</p>
-    </div>
-    <div class="total lineItem">
-      <h5>Total...</h5>
-      <p>{{ this.cart.getTotal() | currency }}</p>
-    </div>
-    <button (click)="confirm()" class="confirm btn btn-primary">
-      Check Out
-    </button>
+  <div *ngIf="!itemsInCart()" class="msg">
+    <h2>Whoops!</h2>
+    <p>
+      It looks like you don't have any items in your cart!? Head back to the
+      home page!
+    </p>
+    <p>
+      You can come back here and check out once you've added items to your
+      shopping cart
+    </p>
+    <a class="btn btn-primary" routerLink="/home">Home</a>
   </div>
 </div>
 
-<div *ngIf="!itemsInCart()" class="msg">
-  <h2>Whoops!</h2>
-  <p>
-    It looks like you don't have any items in your cart!? Head back to the home
-    page!
-  </p>
-  <p>
-    You can come back here and check out once you've added items to your
-    shopping cart
-  </p>
-  <a class="btn btn-primary" routerLink="/home">Home</a>
+<div *ngIf="!this.logIn.loggedIn" class="empty">
+  <h2>You need to Log In to use the Cart Feature!</h2>
+  <a class="btn btn-dark" routerLink="/login">Login</a>
 </div>

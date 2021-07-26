@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cart } from '../classes/cart';
+import { CartService } from '../services/cart.service';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-purchased',
@@ -7,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PurchasedComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cart: CartService, public LogIn: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+    setTimeout(()=>{this.router.navigateByUrl("/home")},15000)
   }
 
 }

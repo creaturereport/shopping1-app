@@ -10,6 +10,7 @@ export class LoginService {
   BASE_URL= "https://users-authentication-70a63-default-rtdb.firebaseio.com/"
 
   loggedInUser = new User;
+  loggedIn: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -31,6 +32,7 @@ export class LoginService {
 
     setUser(item: User){
       this.loggedInUser = item;
+      this.loggedIn = true
     }
 
     editUser(item: any, apiPath: string): Observable<any>{

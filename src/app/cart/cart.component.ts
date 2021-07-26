@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../classes/cart';
 import { CartService } from '../services/cart.service';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +10,7 @@ import { CartService } from '../services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  constructor(public cart: CartService) {}
+  constructor(public cart: CartService, public logIn: LoginService) {}
 
   ngOnInit(): void {
   }
@@ -50,8 +51,4 @@ export class CartComponent implements OnInit {
     this.cart.deleteItem(item)
   }
 
-  confirm() {
-    console.log("confirm")
-    // create a thank you for your purchease comp! (timeout on screen then return to home)
-  }
 }
