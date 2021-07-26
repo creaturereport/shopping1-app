@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-hats',
@@ -9,11 +10,12 @@ import { ProductsService } from '../services/products.service';
 export class HatsComponent implements OnInit {
   hatStyles: any = [];
 
-  constructor(public getHatsApi: ProductsService) { }
+  constructor(public getHatsApi: ProductsService, public cart: CartService) { }
 
   ngOnInit(): void {
     console.log('on hats comp')
     this.getAllHats();
+    this.cart.getSubTotal()
   }
   
 
