@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { CartComponent } from './cart/cart.component';
 import { CartService } from './services/cart.service';
+import { PurchasedComponent } from './purchased/purchased.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CartService } from './services/cart.service';
     LoginComponent,
     ProfileComponent,
     CartComponent,
+    PurchasedComponent,
     
   ],
   imports: [

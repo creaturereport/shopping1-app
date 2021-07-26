@@ -16,23 +16,19 @@ export class CartService {
     let copy: boolean = false;
     if (this.cart.length === 0) {
       this.cart.push(item)
-      console.log(this.cart, "empty cart, item added")
     }
     else {
       for (let i = 0; i < this.cart.length; i++) {
         if (item.name === this.cart[i].name) {
           this.cart[i].quantity += 1;
-          console.log("copy found, increasing quantity", this.cart[i])
           copy = true
           break
         }
       }
       if (!copy) {
-        console.log("new item added to cart", item)
         this.cart.push(item)
       }
     }
-    console.log(this.cart, "updated cart")
   }
 
   removeItem(item: Cart) {
@@ -46,13 +42,31 @@ export class CartService {
         }
       }
     }
-    console.log("Removed Item, New Cart: ", this.cart)
   }
 
-  deleteItem(item: Cart) {}
+  deleteItem(item: Cart) {
+    for (let i = 0; i < this.cart.length; i++) {
+      if (item.name === this.cart[i].name) {
+        this.cart.splice(i,1)
+        break
+      }
+    }
+  }
+
+  getSubTotal() {
+    let total: number= 0;
+    for (let index of this.cart) {
+      total += + index.price * index.quantity
+    }
+    return total
+  }
+
+  getTax() {
+    return Math.round((this.getSubTotal() * 0.07) * 100) / 100
+  }
 
   getTotal() {
-    let total: number= 0;
+    return Math.round((this.getSubTotal() * 1.07) * 100) / 100 
   }
 
   getCartCount() {

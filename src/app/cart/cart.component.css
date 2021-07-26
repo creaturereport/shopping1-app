@@ -34,6 +34,13 @@
 }
 
 .lineItem {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.lineItem p {
+  font-weight: 500;
 }
 
 .msg {

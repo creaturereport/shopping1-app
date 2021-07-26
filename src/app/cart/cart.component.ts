@@ -24,15 +24,30 @@ export class CartComponent implements OnInit {
   }
 
   onAdd(name: string, price: number) {
-    console.log("Add")
+    let item: Cart = {
+      price: price,
+      name: name,
+      quantity: 1
+    }
+    this.cart.addItem(item)
   }
 
   onRemove(name: string, price: number) {
-    console.log("Remove")
+    let item: Cart = {
+      price: price,
+      name: name,
+      quantity: 1
+    }
+    this.cart.removeItem(item)
   }
   
   onDelete(name: string, price: number) {
-    console.log("Delete")
+    let item: Cart = {
+      price: price,
+      name: name,
+      quantity: 1
+    }
+    this.cart.deleteItem(item)
   }
 
   confirm() {
