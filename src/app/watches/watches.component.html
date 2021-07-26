@@ -1,22 +1,43 @@
 <app-nav></app-nav>
-<!-- Display options for watches -->
-<div class="watchesContainer"> 
-    <div *ngFor="let watch of watchStyles">
-        
-        <div class="cardStyle">
-            <div class="card" style="width: 18rem;">
-                <img src={{watch.image_url}} 
-                    class="card-img-top"
-                    width="290px"
-                    height="300px" 
-                    alt="hats">
-                <div class="card-body">
-                  <h5 class="card-title">{{ watch.name }}</h5>
-                  <p class="card-text">${{ watch.price }}</p>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                </div>
-              </div>
+<!-- Display options for hats -->
+<div class="watchesContainer">
+  <div *ngFor="let watch of watchStyles">
+    <div class="cardStyle">
+      <div class="card" style="width: 18rem">
+        <img
+          src="{{ watch.image_url }}"
+          class="card-img-top"
+          width="290px"
+          height="300px"
+          alt="watches"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ watch.name }}</h5>
+          <p class="card-text">${{ watch.price }}</p>
+          <p class="card-text">{{ quantity(watch.name) }} in cart</p>
+          <button
+            *ngIf="!inCartCheck(watch.name)"
+            (click)="addItem(watch.price, watch.name)"
+            class="btn btn-primary"
+          >
+            Add To Cart
+          </button>
+          <div *ngIf="inCartCheck(watch.name)">
+            <button
+              class="btn btn-success"
+              (click)="addItem(watch.price, watch.name)"
+            >
+              Add 1
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="removeItem(watch.name, watch.price)"
+            >
+              Remove 1
+            </button>
+          </div>
         </div>
-    
+      </div>
     </div>
+  </div>
 </div>
