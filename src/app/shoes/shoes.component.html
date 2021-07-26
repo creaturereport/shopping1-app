@@ -1,22 +1,43 @@
 <app-nav></app-nav>
-<!-- Display options for shoes -->
-<div class="shoesContainer"> 
-    <div *ngFor="let shoe of shoeStyles">
-        
-        <div class="cardStyle">
-            <div class="card" style="width: 18rem;">
-                <img src={{shoe.image_url}} 
-                    class="card-img-top"
-                    width="290px"
-                    height="300px" 
-                    alt="hats">
-                <div class="card-body">
-                  <h5 class="card-title">{{ shoe.name }}</h5>
-                  <p class="card-text">${{ shoe.price }}</p>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                </div>
-              </div>
+<!-- Display options for hats -->
+<div class="shoesContainer">
+  <div *ngFor="let shoe of shoeStyles">
+    <div class="cardStyle">
+      <div class="card" style="width: 18rem">
+        <img
+          src="{{ shoe.image_url }}"
+          class="card-img-top"
+          width="290px"
+          height="300px"
+          alt="shoes"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ shoe.name }}</h5>
+          <p class="card-text">${{ shoe.price }}</p>
+          <p class="card-text">{{ quantity(shoe.name) }} in cart</p>
+          <button
+            *ngIf="!inCartCheck(shoe.name)"
+            (click)="addItem(shoe.price, shoe.name)"
+            class="btn btn-primary"
+          >
+            Add To Cart
+          </button>
+          <div *ngIf="inCartCheck(shoe.name)">
+            <button
+              class="btn btn-success"
+              (click)="addItem(shoe.price, shoe.name)"
+            >
+              Add 1
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="removeItem(shoe.name, shoe.price)"
+            >
+              Remove 1
+            </button>
+          </div>
         </div>
-    
+      </div>
     </div>
+  </div>
 </div>
