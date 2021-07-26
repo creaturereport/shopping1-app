@@ -13,7 +13,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ watch.name }}</h5>
                   <p class="card-text">${{ watch.price }}</p>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                  <a class="btn btn-primary" (click)="addItem(watch)">Add to Cart</a>
                 </div>
               </div>
         </div>

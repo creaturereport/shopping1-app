@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
+import { CartService } from '../services/cart.service';
+import { Product } from '../classes/product';
 
 @Component({
   selector: 'app-pants',
@@ -9,7 +11,7 @@ import { ProductsService } from '../services/products.service';
 export class PantsComponent implements OnInit {
   pantStyles: any = []
 
-  constructor(public getProductsApi: ProductsService) { }
+  constructor(public getProductsApi: ProductsService, public cartApi: CartService) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -19,6 +21,11 @@ export class PantsComponent implements OnInit {
     return this.getProductsApi.getProducts("Pants").subscribe((data: {}) =>{
       this.pantStyles = data;
     })
-  }  
+  } 
+  
+  addItem(item: Product){
+    // console.log(item)
+    return this.cartApi.addToCart(item)
+  }
 
 }

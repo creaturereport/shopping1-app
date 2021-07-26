@@ -1,6 +1,8 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
+import { CartService } from '../services/cart.service';
+import { Product } from '../classes/product';
 
 @Component({
   selector: 'app-shirts',
@@ -10,7 +12,7 @@ import { ProductsService } from '../services/products.service';
 export class ShirtsComponent implements OnInit {
   styleShirts: any = []
 
-  constructor(public getProductsApi: ProductsService) { }
+  constructor(public getProductsApi: ProductsService, public cartApi: CartService) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -22,7 +24,10 @@ export class ShirtsComponent implements OnInit {
       console.log(this.styleShirts)
     })
   }
- 
-
+   
+  addItem(item: Product){
+    // console.log(item)
+    return this.cartApi.addToCart(item)
+  }
   
 }
