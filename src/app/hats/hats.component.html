@@ -14,12 +14,28 @@
         <div class="card-body">
           <h5 class="card-title">{{ hat.name }}</h5>
           <p class="card-text">${{ hat.price }}</p>
+          <p class="card-text">{{ quantity(hat.name) }} in cart</p>
           <button
-            (click)="addCart(hat.price, hat.name)"
+            *ngIf="!inCartCheck(hat.name)"
+            (click)="addItem(hat.price, hat.name)"
             class="btn btn-primary"
           >
             Add To Cart
           </button>
+          <div *ngIf="inCartCheck(hat.name)">
+            <button
+              class="btn btn-success"
+              (click)="addItem(hat.price, hat.name)"
+            >
+              Add 1
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="removeItem(hat.name, hat.price)"
+            >
+              Remove 1
+            </button>
+          </div>
         </div>
       </div>
     </div>

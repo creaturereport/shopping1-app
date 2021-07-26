@@ -13,35 +13,46 @@ export class CartService {
   }
 
   addItem(item: Cart) {
+    let copy: boolean = false;
     if (this.cart.length === 0) {
       this.cart.push(item)
       console.log(this.cart, "empty cart, item added")
     }
     else {
-      for (let index of this.cart) {
-        console.log(index)
-        if (item.name === index.name) {
-          console.log(index, "copy found")
+      for (let i = 0; i < this.cart.length; i++) {
+        if (item.name === this.cart[i].name) {
+          this.cart[i].quantity += 1;
+          console.log("copy found, increasing quantity", this.cart[i])
+          copy = true
+          break
         }
-        else {
-          this.cart.push(item)
-          console.log(this.cart, "item added")
+      }
+      if (!copy) {
+        console.log("new item added to cart", item)
+        this.cart.push(item)
+      }
+    }
+    console.log(this.cart, "updated cart")
+  }
+
+  removeItem(item: Cart) {
+    for (let i = 0; i < this.cart.length; i++) {
+      if (item.name === this.cart[i].name) {
+        if (this.cart[i].quantity === 1) {
+          this.cart.splice(i,1)
+        }
+        else if (this.cart[i].quantity > 1) {
+          this.cart[i].quantity -= 1;
         }
       }
     }
-    console.log(this.cart, "test")
+    console.log("Removed Item, New Cart: ", this.cart)
   }
 
-  removeItem() {
-    
-  }
+  deleteItem(item: Cart) {}
 
-  getTotal() {
-    let total: number = 0
-    for (let index of this.cart) {
-      total += index.price
-    }
-    console.log(total)
-  }
+  getTotal() {}
+
+  getCartCount() {}
 
 }
